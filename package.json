@@ -14,6 +14,7 @@
         "@types/react-dom": "^17.0.11",
         "cors": "^2.8.5",
         "css-loader": "^6.5.1",
+        "dotenv": "^16.0.0",
         "express": "^4.17.2",
         "html-webpack-plugin": "^5.5.0",
         "jest": "^27.5.1",
