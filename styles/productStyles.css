@@ -1,0 +1,9 @@
+.card-title-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.5rem
+}
+
+.description-text {
+    font-size: 1.5rem;
+}
