@@ -24,9 +24,9 @@ controller.getUsers = async(req, res, next) => {
 //hash a user input password
 controller.hash = async(req, res, next) => {
   try{
-    const {name, password} = req.body;
+    const {first_name, last_name, email, user_password} = req.body;
     const hashedPw = await bcrypt.hash(password, 10, (err, hash) => {
-      const userSignup = {name: name, hashPw: hash};
+      const userSignup = {first_name: first_name, last_name: last_name, email: email, hashPw: hash};
       res.locals.signupInfo = userSignup;
       return next();
     });
@@ -41,6 +41,32 @@ controller.hash = async(req, res, next) => {
   }
 };
 
-//create a new row in public.user, storing first_name, last_name, email, and encrypted password
 
+//create a new row in public.user, storing first_name, last_name, email, and encrypted password
+controller.newUser = async(req, res, next) => {
+  try{
+    const { first_name, last_name, email, hashedPw } = res.locals.signupInfo
+    const params = [
+      first_name,
+      last_name,
+      email,
+      hashedPw,
+    ];
+
+    const text = `INSERT INTO public.users (first_name, last_name, email, hashedPw) VALUES ($1, $2, $3, $4) RETURNING *`;
+
+    const result = await db.query(text, params);
+
+    res.locals.newUser = result.rows[0];
+    return next();
+  } catch (error) {
+    return next({
+      log:`controller.newUser ERROR found`,
+      status: 500,
+      message: {
+        err: 'Error occured in controller.newUser. Check the server logs!',
+      },
+    });
+  }
+};
 
