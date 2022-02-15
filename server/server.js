@@ -2,9 +2,10 @@ const path = require('path');
 const express = require('express');
 
 const app = express();
+const pool = require('./database');
 
 const PORT = 3000;
-// const router = require('./routers')
+const apiRouter = require('./api')
 
 /**
  * handle parsing request body
@@ -20,7 +21,7 @@ const PORT = 3000;
  /**
  * define route handlers
  */
-// app.use('/api', router);
+app.use('/api', apiRouter);
 
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.status(404).send('This is not the page you\'re looking for...'));
