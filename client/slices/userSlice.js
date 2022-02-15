@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
   name: '',
-}
+};
 
 export const userSlice = createSlice({
   name: 'user',
@@ -16,7 +16,7 @@ export const userSlice = createSlice({
       state.name = action.payload;
     },
   },
-})
+});
 
 // Action creators are generated for each case reducer function
 export const { getUsername } = userSlice.actions;
