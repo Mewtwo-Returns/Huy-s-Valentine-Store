@@ -12,7 +12,7 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setName: (state, action: PayloadAction<string>) => {
+    getUsername: (state, action: PayloadAction<string>) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
@@ -23,6 +23,6 @@ export const userSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setName } = userSlice.actions
+export const { getUsername } = userSlice.actions
 
 export default userSlice.reducer
