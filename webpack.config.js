@@ -6,7 +6,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  entry: ['./client/index.tsx'],
+  entry: ['./client/index.js'],
   output: {
     path: path.resolve(__dirname, 'client/build'),
     filename: 'bundle.js',
@@ -14,53 +14,20 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-      {
         test: /\.(js|jsx)$/,
         use: [{
-            loader:'babel-loader',
-            options: {
-                presets: [
-                    '@babel/preset-env',
-                    '@babel/preset-react'
-                ]
-            }}],
+          loader:'babel-loader',
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react'
+            ]
+          }}],
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
-          'postcss-loader',
-        ],
-        exclude: /\.module\.css$/,
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              modules: true,
-            },
-          },
-          'postcss-loader',
-        ],
-        include: /\.module\.css$/,
-      },
-      {
-        test: /\.scss$/,
+        test: /.(css|scss)$/,
+        exclude: [/node_modules/, /client\/stylesheets\/modules/],
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
@@ -107,7 +74,7 @@ const config = {
     }),
   ],
   resolve: {
-      extensions: ['.js', '.jsx', '.tsx', '.ts'],
+    extensions: ['.js', '.jsx'],
   }
 };
 

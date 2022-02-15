@@ -1,10 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-export interface UserState {
-  name: string,
-}
-
-const initialState: UserState = {
+const initialState = {
   name: '',
 }
 
@@ -12,17 +8,17 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setName: (state, action: PayloadAction<string>) => {
+    getUsername: (state, action) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      state.name = action.payload
+      state.name = action.payload;
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setName } = userSlice.actions
+export const { getUsername } = userSlice.actions;
 
-export default userSlice.reducer
+export default userSlice.reducer;

@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+/* // Our HTML font size is reset to Base 10 for ease of REM calculations: 1rem = 10px */
+html {
+  font-size: 10px;
+  text-size-adjust: 100%;
+}
+
+img,
+picture {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
