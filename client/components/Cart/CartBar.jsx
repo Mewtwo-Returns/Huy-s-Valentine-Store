@@ -4,7 +4,7 @@ import { IoCartOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './CartItem';
-import '../../../styles/cart.css'
+import '../../../styles/cart.css';
 
 const CartBar = (props) => {
 
@@ -20,29 +20,32 @@ const CartBar = (props) => {
   const cart = [<CartItem item={item} key='1'/>];
 
   return (
-    <div id="cart-sidebar">
-      <IconContext.Provider value={{className: 'minimize-cart', size:'1.5em'}}>
-        <BsBoxArrowRight onClick={() => props.setExpandedPost(false)}/>
-      </IconContext.Provider>
-      <div id="cart-header">
-        <IconContext.Provider value={{size:'2rem'}}>
-          <IoCartOutline />
+    <div id="modal-overlay">
+      <div id="cart-sidebar">
+        <IconContext.Provider value={{className: 'minimize-cart', size:'1.9em'}}>
+          <BsBoxArrowRight onClick={() => props.setExpandedPost(false)}/>
         </IconContext.Provider>
-        <span id="your-cart">Your Cart</span>
-      </div>
-      <div id="cart-items-container">
-        {cart}
-      </div>
-      <div id="total-summary">
-        <p id="subtotal">Subtotal: <span>$5</span></p>
-        <p id="shipping">Shipping: <span>$5</span></p>
-        <p id="tax">Tax: <span>$5</span></p>
-        <p id="total">Total: <span>$5</span></p>
-      </div>
-      <div id="button-bar">
-        <button id="secondary-button" className="form-button" onClick={console.log('TODO')}>Checkout</button>
+        <div id="cart-header">
+          <IconContext.Provider value={{size:'2rem'}}>
+            <IoCartOutline />
+          </IconContext.Provider>
+          <span id="your-cart">Your Cart</span>
+        </div>
+        <div id="cart-items-container">
+          {cart}
+        </div>
+        <div id="total-summary">
+          <p id="subtotal">Subtotal: <span>$5</span></p>
+          <p id="shipping">Shipping: <span>$5</span></p>
+          <p id="tax">Tax: <span>$5</span></p>
+          <p id="total">Total: <span>$5</span></p>
+        </div>
+        <div id="button-bar">
+          <button id="secondary-button" className="form-button" onClick={console.log('TODO')}>Checkout</button>
+        </div>
       </div>
     </div>
+    
   );
 };
 
