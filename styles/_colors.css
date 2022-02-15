@@ -1,0 +1,107 @@
+:root {
+  /* // AN named color variables calculated in RGB format
+  // Can then be used with rgb() or rbga() functions
+  // ex: --white: #{to-rgb(#fff)};
+  // --white = 255, 255, 255
+  // --site-background: rgb(var(--white));
+  // --site-background: rgba(var(--white), 0.8); */
+  
+  --white: #{to-rgb(#fff)};
+  --ivory: #{to-rgb(#fdfdf9)};
+  --taupe-light: #{to-rgb(#f7f6f2)};
+  --taupe: #{to-rgb(#e5e2de)};
+  --grey-light: #{to-rgb(#ccc)};
+  --grey-medium: #{to-rgb(#939395)};
+  --grey: #{to-rgb(#5c5c5f)};
+  --grey-dark: #{to-rgb(#26262c)};
+  --blue: #{to-rgb(#167a92)};
+  --blue-grey: #{to-rgb(#4b5666)};
+  --blue-light: #{to-rgb(#f2f8f5)};
+  --red: #{to-rgb(#c33d3d)};
+  --orange: #{to-rgb(#a5642d)};
+  --yellow: #{to-rgb(#eabb30)};
+  --green: #{to-rgb(#367668)};
+  
+   /* Site backgrounds */
+  --site-background: rgb(var(--ivory));
+  --site-background-secondary: rgb(var(--taupe-light));
+
+  /* // Modal colors */
+  --modal-overlay: rgba(var(--blue-grey, 0.4));
+  --modal-background: rgb(var(--ivory));
+  
+  
+  /* // Text colors */
+  --text-light: rgb(var(--white));
+  --text-medium: rgb(var(--grey));
+  --text-dark: rgb(var(--grey-dark));
+  --error: rgb(var(--red));
+  
+  /* // Link colors */
+  --link-text: rgb(var(--blue));
+  --link-text-hover: rgb(var(--blue));
+  --link-text-selected: rgb(var(--blue));
+  --link-navigation-border: rgb(var(--grey-dark));
+  --link-navigation-border-hover: rgb(var(--blue));
+  --link-navigation-border-selected: rgb(var(--grey-dark));
+  --link-navigation-text: rgb(var(--grey-dark));
+  --link-navigation-text-hover: rgb(var(--blue));
+  --link-navigation-text-selected: rgb(var(--grey-dark));
+  
+  /* // Button colors
+  // Button cart */
+  --button-cart-background: rgb(var(--blue-grey));
+  --button-cart-border: rgb(var(--blue-grey));
+  --button-cart-text: rgb(var(--white));
+  --button-cart-background-hover: var(--site-background);
+  --button-cart-border-hover: rgb(var(--blue-grey));
+  --button-cart-text-hover: rgb(var(--blue-grey));
+  --button-cart-background-disabled: rgb(var(--grey-light));
+  --button-cart-border-disabled: rgb(var(--grey-light));
+  --button-cart-text-disabled: rgb(var(--white));
+  --button-cart-background-confirmation: var(--site-background);
+  --button-cart-border-confirmation: rgb(var(--blue-grey));
+  --button-cart-text-confirmation: rgb(var(--blue-grey));
+  --button-cart-loader-confirmation: rgb(var(--blue-grey));
+  
+  /* // Button primary */
+  --button-primary-background: rgb(var(--blue-grey));
+  --button-primary-border: rgb(var(--blue-grey));
+  --button-primary-text: rgb(var(--white));
+  --button-primary-background-hover: var(--site-background);
+  --button-primary-border-hover: rgb(var(--blue-grey));
+  --button-primary-text-hover: rgb(var(--blue-grey));
+  --button-primary-background-disabled: rgb(var(--grey-light));
+  --button-primary-border-disabled: rgb(var(--grey-light));
+  --button-primary-text-disabled: rgb(var(--white));
+  --button-primary-background-confirmation: var(--site-background);
+  --button-primary-border-confirmation: rgb(var(--blue-grey));
+  
+  /* // Form colors */
+  --input-border: rgb(var(--grey-medium));
+  --input-background: rgb(var(--ivory));
+  --input-text-placeholder: rgb(var(--grey-medium));
+  --input-text: rgb(var(--grey));
+  --input-border-focus: rgb(var(--blue));
+  --input-border-disabled: var(--disabled);
+  --input-text-disabled: var(--disabled);
+  
+  /* // Icon colors */
+  --control: rgb(var(--grey-dark));
+  --control-hover: rgb(var(--blue));
+  --control-selected: rgb(var(--grey-dark));
+  --control-disabled: rgb(var(--grey-light));
+  --control-contrast: rgb(var(--white));
+  --control-hover-contrast: rgb(var(--taupe));
+  --icon: rgb(var(--grey-medium));
+
+  /* // Border colors */
+  --border-default: rgb(var(--taupe));
+  --separator: rgb(var(--grey-light));
+  --border-secondary: rgb(var(--taupe));
+  --border-heading: rgb(var(--taupe));
+  
+  /* // Box Shadow */
+  --box-shadow: transparent; 
+  --drop-shadow: rgba(0, 0, 0, 0.1);
+}
