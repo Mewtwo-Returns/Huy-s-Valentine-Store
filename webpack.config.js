@@ -31,15 +31,10 @@ const config = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[name].[ext]',
-            },
-          },
-        ],
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: {
+          loader: 'file-loader',
+        },
       },
       {
         test: /\.svg$/,
