@@ -69,7 +69,7 @@ controller.newUser = async(req, res, next) => {
   }
 };
 
-//login 
+//user login 
 controller.login = async(req, res, next) => {
   const {email, password} = req.body;
   const queryStr = `SELECT * from public.users WHERE email=$1`

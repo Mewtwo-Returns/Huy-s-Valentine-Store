@@ -19,6 +19,7 @@ router.post(
   (req, res) => res.status(200).json(res.locals.newUser)
 )
 
+//get all user info from public.users, passing email & decrypted password in req.body
 router.post(
   '/login',
   controller.login,
