@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const controller = {};
 
 //get all users
-controller.getUsers = asyn(req, res, next) => {
+controller.getUsers = async(req, res, next) => {
   try{
     const queryStr = `SELECT * from public.users`;
     const result = await db.query(queryStr);
