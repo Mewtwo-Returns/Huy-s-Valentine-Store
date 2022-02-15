@@ -41,3 +41,6 @@ controller.hash = async(req, res, next) => {
   }
 };
 
+//create a new row in public.user, storing first_name, last_name, email, and encrypted password
+
+
