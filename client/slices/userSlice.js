@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
   name: '',
+  cart: {}
 };
 
 export const userSlice = createSlice({
@@ -15,10 +16,22 @@ export const userSlice = createSlice({
       // immutable state based off those changes
       state.name = action.payload;
     },
+    addToCart: (state, action) => {
+      //if product is not in cart, add to cart object
+      if (!state.cart[action.payload]){ 
+        state.cart[action.payload] = 1;
+      }
+      else state.cart[action.payload]++;
+    },
+    removeFromCart: (state, action) => {
+      if (state.cart[action.payload]){ 
+        state.cart[action.payload]--;
+      }
+    }
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { getUsername } = userSlice.actions;
+export const { getUsername, addToCart, removeFromCart } = userSlice.actions;
 
 export default userSlice.reducer;

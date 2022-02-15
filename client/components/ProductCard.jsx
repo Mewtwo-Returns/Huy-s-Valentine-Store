@@ -9,6 +9,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import huy from '../../public/huywillstretchyoushirt.PNG'
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart } from '../slices/userSlice';
 
 const ProductCard = () => {
     // { props } : { props: any }
@@ -24,21 +26,21 @@ const ProductCard = () => {
     //     price: number;
     // } = props;
 
-    // useEffect(() => {
-    //     axios
-    //    .post<Product[]>(uri, body)
-    //   .then(({ data }: AxiosResponse<any>) => {
+    const dispatch = useDispatch();
 
+    const cart = useSelector((state) => state.user.cart);
 
+    const addCart = (item) => {
+        dispatch(addToCart(item));
+        console.log(cart);
+    };
 
-
-
-    // })
+    const removeCart = (item) => {
+        dispatch(removeFromCart(item));
+    };
 
     return(
-
         <div>
-            
             <Card sx={{ maxWidth: 320 }}>
                 <CardMedia
                     component="img"
@@ -48,27 +50,22 @@ const ProductCard = () => {
                     // alt={props.product}
                 />
                 <CardContent>
-                    <h5 class="card-title-container">
+                    <h5 className="card-title-container">
                     {/* {props.product} {props.price}*/}
-                    <div class="card-title">Will</div>
-                    <div class="card-title">Price</div>
+                    <div className="card-title">Will</div>
+                    <div className="card-title">Price</div>
                     </h5>
                     <Typography variant="body2" color="text.secondary">
-                    {/* {props.description}*/}<div class="description-text">description here</div>
+                    {/* {props.description}*/}<div class="description-text">description here state</div>
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="medium" variant="contained">Add To Cart</Button>
-                    <Button size="medium" variant="outlined">Remove</Button>
+                    <Button size="medium" variant="contained" onClick={() => addCart('Will')}>Add To Cart</Button>
+                    <Button size="medium" variant="outlined" onClick={() => removeCart('Will')}>Remove</Button>
                 </CardActions>
-        </Card>
-
-
+            </Card>
         </div>
-
-    )
-
-}
-
+    );
+};
 
 export default ProductCard;
