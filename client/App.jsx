@@ -4,15 +4,17 @@ import '../styles/_base.css';
 import '../styles/styles.css';
 // import SignInModal from './components/Modals/SignInModal';
 import ProductCard from './components/ProductCard';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import huyBanner from './assets/huyBanner.png';
 import roses from './assets/roses.jpeg';
+import All from './pages/All';
 
 const App = () => {
 
   return (
     
       <BrowserRouter>
+       
       {/* <ProductCard/> */}
         <div className='grid-container'>
   
@@ -51,11 +53,11 @@ const App = () => {
           <nav className='sidebar'>
             <div id='box'>
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  All
+                  <Link to='/all'>All</Link>
                 <span className="bi bi-heart-fill"></span></button>
            
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  Clothing
+                  <Link to='/clothing'>Clothing</Link>
                 <span className="bi bi-heart-fill"></span></button>
          
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
@@ -101,6 +103,13 @@ const App = () => {
           </div> */}
         <footer className='footer'>Copyright &#169; 2019 Huy's Instagram/Tiktok. All rights reserved.</footer>
       </div>
+
+      <Routes>
+        <Route path="/all" element={<All />} />
+        {/* <Route path="/clothing" element={<All />} /> */}
+
+      </Routes>
+
     </BrowserRouter>
   ); 
   }
