@@ -19,14 +19,27 @@ router.post(
   (req, res) => res.status(200).json(res.locals.newUser)
 )
 
+router.post(
+  '/login',
+  controller.login,
+  (req, res) => res.status(200).json(res.locals.user)
+)
+
+//gets specific product by category
+router.get(
+  '/products/:category',
+  controller.getProductsByCategory,
+  (req, res) => res.status(200).json(res.locals.getProductsByCategory)
+);
 
 //gets all products from public.products table
 router.get(
-  'products',
+  '/products',
   controller.getProducts,
   (req, res) => res.status(200).json(res.locals.productsInfo)
 );
 
 
+module.exports = router;
 
 
