@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cute+Font&family=Jua&family=Single+Day&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cute+Font&family=Jua&family=Single+Day&display=swap");
 
 html {
   font-size: 62.5%; /* Sets default font size to 10px (1rem) */
@@ -20,22 +20,24 @@ textarea {
 } */
 
 button {
+  /* width: 18rem; */
   background-color: #f1edd5;
   border: none;
+  padding: 0.5rem 0.25rem 0.5rem 0.25rem;
   color: palevioletred;
   text-shadow: 1px 1.5px rgb(129, 123, 123);
   text-decoration: rgb(17, 199, 32);
   /* width: 250%; */
   cursor: pointer;
-  margin: -4px 75px -40px;
+  /* margin: -4px 75px -40px; */
   border-radius: 25px;
-  font: 2rem 'Jua', sans-serif;
+  font: 2rem "Jua", sans-serif;
+  /* padding: .1rem; */
+  margin: 0rem 4rem 0rem 4rem;
 }
 button:hover {
-
-  background-color: rgb(243, 93, 163); 
+  background-color: rgb(243, 93, 163);
   color: rgb(230, 213, 224);
-
 }
 
 .full-width {
@@ -47,23 +49,25 @@ button:hover {
 }
 
 #box {
-    width: 1370px;
-    height: 18px;
-    border: 5px solid rgb(182, 152, 182);
-    padding: 10px;
-    margin: 20px;
-    background-color: rgb(182, 152, 182);
-    position: absolute;
-    box-shadow: 8px 5px 5px rgb(138, 138, 133);
-    border-radius: 25px;
+  width: 1370px;
+  height: 6rem;
+  border: 5px solid rgb(182, 152, 182);
+  padding: 1rem;
+  margin: 2rem;
+  background-color: rgb(182, 152, 182);
+  /* position: absolute; */
+  box-shadow: 8px 5px 5px rgb(138, 138, 133);
+  border-radius: 2.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 #space {
   margin-top: 2.5em;
- }
+}
 
- #button {
-  background-color: #4CAF50; /* Green */
+#button {
+  background-color: #4caf50; /* Green */
   border: none;
   color: white;
   /* padding: 15px 32px; */
@@ -71,20 +75,20 @@ button:hover {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
- }
+}
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header'
-    'main'
-    'footer';
+    "header"
+    "main"
+    "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   height: 30%;
 }
 
 .header {
-  font: 2rem 'Cute Font', cursive;
+  font: 2rem "Cute Font", cursive;
   grid-area: header;
   /* font: 'Cute Font', cursive; */
   background-color: pink;
@@ -109,13 +113,12 @@ button:hover {
 
 #bannerimage {
   width: 100%;
-  background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);
+  background-image: url(https://www.vaticannews.va/content/dam/vaticannews/agenzie/images/reuters/2022/02/11/15/1644588497938.JPG/_jcr_content/renditions/cq5dam.thumbnail.cropped.1500.844.jpeg);
   height: 405px;
-  background-color: purple;
   background-position: center;
+  /* object-fit: cover; */
+  /* background-size: cover; */
 }
-
-
 
 /* .gfg {
   margin: 3%;
@@ -135,16 +138,17 @@ button:hover {
 } */
 
 .footer {
-  font: 3rem 'Cute Font', cursive;
+  font: 3rem "Cute Font", cursive;
   position: fixed;
   padding: 3px 3px 3px 3px;
   bottom: 0;
   width: 100%;
-  bottom:0;
+  bottom: 0;
   grid-area: footer;
   background-color: pink;
   color: #ffffff;
-  text-shadow: -1px -1px 0 rgb(61, 59, 59), 1px -1px 0 rgb(61, 59, 59), -1px 1px 0 rgb(61, 59, 59), 1px 1px 0 rgb(61, 59, 59);
+  text-shadow: -1px -1px 0 rgb(61, 59, 59), 1px -1px 0 rgb(61, 59, 59),
+    -1px 1px 0 rgb(61, 59, 59), 1px 1px 0 rgb(61, 59, 59);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -7,6 +7,7 @@ import ProductCard from './components/ProductCard';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import huyBanner from './assets/huyBanner.png';
 import roses from './assets/roses.jpeg';
+
 const App = () => {
 
   return (
@@ -82,9 +83,11 @@ const App = () => {
               <Route path='/' exact component={HomeContainer} /> */}
           {/* <body> */}
             {/* <div className="gfg"> */}
-            <img  src={roses} alt="loading..." >
-            <img src={huyBanner} id='huybanner'/>
-            </img>
+            {/* <img  src={roses}> */}
+            <div id='bannerimage'>
+            <img src={huyBanner} />
+            </div>
+            {/* </img> */}
               {/* <h3 className="first-txt">
                 GeeksforGeeks
               </h3>
@@ -96,7 +99,7 @@ const App = () => {
           </body> */}
             {/* </main>
           </div> */}
-        <footer className='footer'>Copyright &#169; 2019 Huy's Instagram. All rights reserved.</footer>
+        <footer className='footer'>Copyright &#169; 2019 Huy's Instagram/Tiktok. All rights reserved.</footer>
       </div>
     </BrowserRouter>
   ); 
