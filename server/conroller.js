@@ -70,3 +70,30 @@ controller.newUser = async(req, res, next) => {
   }
 };
 
+//get all products in public.products
+controller.getProducts = async (req, res, next) => {
+  try {
+    // SQL command string
+    const queryString = `SELECT * from public.products`;
+
+    // db query function to get info from our database
+    const result = await db.query(queryStr);
+
+    // db.query will return a giant nested object. We just need the data in the rows key
+    const data = result.rows;
+
+    // store data in res.locals.all to pass to api router
+    res.locals.productsInfo = data;
+    return next();
+  } catch (error) {
+    return next({
+      log: `getProducts controller ERROR`,
+      message: {
+        err: 'Error occurred in controller.getProducts. Check the server logs.',
+      },
+    });
+  }
+};
+
+
+

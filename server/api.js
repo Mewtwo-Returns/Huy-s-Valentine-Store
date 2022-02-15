@@ -23,7 +23,10 @@ router.post(
 //gets all products from public.products table
 router.get(
   'products',
+  controller.getProducts,
   (req, res) => res.status(200).json(res.locals.productsInfo)
 );
+
+
 
 
