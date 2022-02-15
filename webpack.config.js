@@ -14,7 +14,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts(x)?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },
@@ -64,12 +64,12 @@ const config = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.png$/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              mimetype: 'image/png',
+              name: 'images/[name].[ext]',
             },
           },
         ],

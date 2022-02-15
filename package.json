@@ -9,6 +9,9 @@
         "dev": "concurrently \"NODE_ENV=development webpack serve --open\" \"nodemon server/server.js\""
     },
     "dependencies": {
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "@mui/material": "^5.4.1",
         "@reduxjs/toolkit": "^1.7.2",
         "@types/react": "^17.0.39",
         "@types/react-dom": "^17.0.11",
