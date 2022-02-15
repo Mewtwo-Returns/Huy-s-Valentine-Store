@@ -9,9 +9,9 @@ const signInModal =  ({onCloseButtonClick}) => {
 
   const signIn = (e) => {
     e.preventDefault();
-    const username = e.target.username.value;
+    const email = e.target.email.value;
     const password = e.target.password.value;
-    dispatch(getUsername(username, password));
+    dispatch(getUsername(email, password));
   };
 
   const dispatch = useDispatch();
@@ -27,8 +27,8 @@ const signInModal =  ({onCloseButtonClick}) => {
           </div>
           <form id="user-form">
             <div>
-              <label htmlFor="username">Username*</label>
-              <input className="form-input" type="text" name="username" placeholder="Enter your username" required/>
+              <label htmlFor="email">EMAIL*</label>
+              <input className="form-input" type="email" name="email" placeholder="Enter your username" required/>
             </div>
             <div>
               <label htmlFor="password">Password*</label>

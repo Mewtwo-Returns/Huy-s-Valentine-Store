@@ -11,9 +11,9 @@ const signUpModal =  ({onCloseButtonClick}) => {
     e.preventDefault();
     const firstName = e.target.firstName.value;
     const lastName = e.target.lastName.value;
-    const username = e.target.username.value;
+    const email = e.target.email.value;
     const password = e.target.password.value;
-    dispatch(signup(firstName, lastName, username, password));
+    dispatch(signup(firstName, lastName, email, password));
   };
 
   const dispatch = useDispatch();
@@ -37,8 +37,8 @@ const signUpModal =  ({onCloseButtonClick}) => {
               <input className="form-input" type="text" name="lastName" placeholder="Enter your last name"/>
             </div>
             <div>
-              <label htmlFor="username">USERNAME*</label>
-              <input className="form-input" type="text" name="username" placeholder="Enter your username" required/>
+              <label htmlFor="email">EMAIL*</label>
+              <input className="form-input" type="email" name="email" placeholder="Enter your username" required/>
             </div>
             <div>
               <label htmlFor="password">PASSWORD*</label>
