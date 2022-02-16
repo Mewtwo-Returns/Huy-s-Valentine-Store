@@ -36,7 +36,7 @@ const CartBar = ({setCartToggle}) => {
   
 
   return (
-    <div id="modal-overlay">
+    <div id="modal-overlay" onClick={(e) => {e.stopPropagation();setCartToggle(false)}}>
       <div id="cart-sidebar">
         <IconContext.Provider value={{className: 'minimize-cart', size:'1.9em'}}>
           <BsBoxArrowRight onClick={() => setCartToggle(false)}/>

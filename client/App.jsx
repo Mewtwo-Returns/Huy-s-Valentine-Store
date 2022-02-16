@@ -20,6 +20,7 @@ import '../styles/cart.css';
 // import huywelcomingu from './assets/huywelcomingu.png';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BiUserCircle } from 'react-icons/bi';
+import { RiChatHeartFill } from 'react-icons/ri';
 
 const App = () => {
 
@@ -46,7 +47,7 @@ const App = () => {
           <BiUserCircle className="icon" size={80} onClick={() => setSignInModalToggle(true)} style={{alignSelf: 'flex-end' , bottom: 8, position:'absolute' , right:125}}/>
           <AiOutlineShoppingCart className="icon" size={75} onClick={() => setCartToggle(true)}
             style={{alignSelf: 'flex-end' , position:'absolute' , bottom: 11, right:50 }}/> 
-          <a href="/">HUY&apos;S VALENTINE SHOP</a> 
+          <a href="/" className="title">HUY&apos;S VALENTINE SHOP</a> 
               
           <div className='header-links'>
             {/* <Link to='/cart'>
@@ -74,31 +75,33 @@ const App = () => {
         <nav className='sidebar'>
           <div id='navbar'>
             <Link to='/all'>
-              <button type='button' className="btn btn-primary" onClick={() => <Link to='/all'/>}><span className="bi bi-heart-fill"></span>
+              <button type='button' className="navbtn" onClick={() => <Link to='/all'/>}><span className="bi bi-heart-fill"></span>
                 &nbsp;ALL&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
             </Link>
             <Link to='/clothing'>
-              <button type='button' className="btn btn-primary" onClick={() => <Link to='/clothing'/>}><span className="bi bi-heart-fill"></span>
+              <button type='button' className="navbtn" onClick={() => <Link to='/clothing'/>}><span className="bi bi-heart-fill"></span>
                 &nbsp;CLOTHING&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
             </Link>
             <Link to='/miscellaneous'>
-              <button type='button' className="btn btn-primary" onClick={() => <Link to='/micellaneous'/>}><span className="bi bi-heart-fill"></span>
+              <button type='button' className="navbtn" onClick={() => <Link to='/micellaneous'/>}><span className="bi bi-heart-fill"></span>
                 &nbsp;MICELLANEOUS&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
             </Link>
             <Link to='/chocolate'>
-              <button type='button' className="btn btn-primary" onClick={() => <Link to='/chocolate'/>}><span className="bi bi-heart-fill"></span>
+              <button type='button' className="navbtn" onClick={() => <Link to='/chocolate'/>}><span className="bi bi-heart-fill"></span>
                 &nbsp;CHOCOLATE&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
             </Link>
             <Link to='/card'>
-              <button type='button' className="btn btn-primary" onClick={() => <Link to='/card'/>}>
+              <button type='button' className="navbtn" onClick={() => <Link to='/card'/>}>
                 <span className="bi bi-heart-fill"></span>
                 &nbsp;CARD&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
             </Link>
+           
+            <RiChatHeartFill type="button" className="navbtn" size={45} style={{marginTop: 0}}onClick={() => setLetterModalToggle(true)}/>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
           </div>
         </nav>

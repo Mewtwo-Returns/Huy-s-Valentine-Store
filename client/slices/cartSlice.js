@@ -1,12 +1,14 @@
 import { createSlice, current } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: [{name:'rurubear', price:'69.69', quantity:2,
-    imgSrc:'https://nationaltoday.com/wp-content/uploads/2021/08/Teddy-Bear-Day-640x514.jpg',
-  },{name:'deleteMe', price:'100', quantity:1,
-    imgSrc:'https://nationaltoday.com/wp-content/uploads/2021/08/Teddy-Bear-Day-640x514.jpg',
-  },]
+  items: []
 };
+
+// items: [{name:'rurubear', price:'69.69', quantity:2,
+// imgSrc:'https://nationaltoday.com/wp-content/uploads/2021/08/Teddy-Bear-Day-640x514.jpg',
+// },{name:'deleteMe', price:'100', quantity:1,
+// imgSrc:'https://nationaltoday.com/wp-content/uploads/2021/08/Teddy-Bear-Day-640x514.jpg',
+// },]
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -17,10 +19,17 @@ export const cartSlice = createSlice({
     },
     addToCart: (state, action) => {
       //if product is not in cart, add to cart object
-      if (!state.cart[action.payload]){ 
-        state.cart[action.payload] = 1;
+      if (state.items.length > 0){
+        for (let i = 0; i < state.items.length; i++){
+          if (state.items[i].name === action.payload.name){
+            state.items[i].quantity++;
+            return;
+          }
+        }
       }
-      else state.cart[action.payload]++;
+      // const item = state.find((item) => item.name === action.payload.name);
+      // if (item) item.quantity++;
+      state.items.push(action.payload);
     },
     removeItem: (state, action) => {
       state.items.splice(action.payload, 1);
