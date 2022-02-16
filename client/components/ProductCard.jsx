@@ -8,11 +8,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// import huy from 'https://1drv.ms/u/s!At_IzgfLhlEOgn3GwKuGwh3ICIUJ'
-import huy from './public/huywillstretchyoushirt.PNG'
-// import ./public/huywillstretchyoushirt.PNG from './public/huywillstretchyoushirt.PNG'
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart } from '../slices/userSlice';
+import { addToCart} from '../slices/cartSlice';
 
 const ProductCard = (props) => {
 
@@ -44,15 +41,12 @@ const ProductCard = (props) => {
 
     return(
         <div className="card-container">
-            {/* <img src={require('./public/huywillstretchyoushirt.PNG')} /> */}
-            // <img src={'./public/huywillstretchyoushirt.PNG'} />
             <Card sx={{ maxWidth: 320 }}>
                 <CardMedia
                     component="img"
                     height="120"
                     image={props.image}
-                    image={huy}
-                    // image={require('./public/huywillstretchyoushirt.PNG')}
+                    image='https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/274151068_5048959448503143_3787574081341773627_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=0debeb&_nc_ohc=R0w8zMeDYRAAX-Y7m1d&tn=qWcAyokT1n4vRkP4&_nc_ht=scontent-lga3-1.xx&oh=00_AT9FjiX4AuSbUdkm1larwO5kX8afwblyN4apXzvYulQx_g&oe=6212382B'
                     alt={props.product}
                 />
                 <CardContent>
@@ -66,7 +60,6 @@ const ProductCard = (props) => {
                 </CardContent>
                 <CardActions>
                     <Button size="medium" variant="contained" onClick={() => addCart(props.product)}>Add To Cart</Button>
-                    {/* <Button size="medium" variant="outlined" onClick={() => removeCart(props.product)}>Remove</Button> */}
                 </CardActions>
             </Card>
         </div>
