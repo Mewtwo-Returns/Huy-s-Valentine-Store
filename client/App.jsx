@@ -60,7 +60,7 @@ const App = () => {
             </div>   */}
           {/* Category Section */}
           <nav className='sidebar'>
-            <div id='box'>
+            <div id='navbar'>
               <Link to='/all'>
                 <button type='button' className="btn btn-primary" onClick={() => <Link to='/all'/>}><span className="bi bi-heart-fill"></span>
                 &nbsp;ALL&nbsp;

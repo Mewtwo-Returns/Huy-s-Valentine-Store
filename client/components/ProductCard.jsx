@@ -40,8 +40,8 @@ const ProductCard = (props) => {
     };
 
     return(
-        <div className="card-container">
-            <Card sx={{ minWidth: 400, maxWidth: 400 }}>
+        <div className="card-container" style={{ marginTop: 70}}>
+            <Card sx={{ minWidth: 400, maxWidth: 400}}>
                 <div className="image-container">
                 <CardMedia
                     component="img"

@@ -29,19 +29,19 @@ button {
   color: white;
   text-shadow: 1px 1.5px rgb(129, 123, 123);
   /* text-decoration: rgb(17, 199, 32); */
-  
+
   cursor: pointer;
-  
+
   /* border-radius: 5px; */
-  font: 2rem "Jua", sans-serif;
-  
+  font: 2rem 'Jua', sans-serif;
+
   margin: 0rem 4rem 0rem 4rem;
 }
 
 button:hover {
   background-color: white;
   color: rgb(245, 22, 115);
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
@@ -49,28 +49,32 @@ button:hover {
   /* box-shadow: .3rem .3rem rgb(153, 153, 147); */
 }
 
-.icon:hover{
+.icon:hover {
   color: rgb(245, 22, 115);
 }
 
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
-  
-  20%, 80% {
+
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
 
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0);
   }
 
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0);
   }
 }
-
 
 .bi-heart-fill {
   padding: 0 0.5rem 0 0.5rem;
@@ -84,60 +88,63 @@ button:hover {
   height: 100%;
 }
 
-#box {
+#navbar {
   border: 5px solid white;
-  border-left:none;
-  border-right:none;
+  border-left: none;
+  border-right: none;
   flex: 1;
   width: 100%;
   height: 6rem;
   background: rgb(88, 67, 67);
   /* background-image: url(https://i.pinimg.com/originals/3b/b4/f7/3bb4f7f58259e532773cb137ce84816b.jpg); */
-  padding: 1rem;
-  /* margin: 2rem 0; */
+  /* padding: -1rem; */
+  /* margin: 2rem 0 0 2rem; */
   /* position: absolute; */
   /* box-shadow: 5px 5px 5px rgb(138, 138, 133); */
   display: flex;
   justify-content: space-between;
-  position: fixed;
+  /* position: fixed; */
+  position: sticky;
+  z-index: 25;
+  top: 0;
+  align-items: center;
 }
-#img1{
+#img1 {
   filter: contrast(90%) brightness(120%);
   filter: saturate(90%);
   animation: fadeInAnimation ease 2.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  }
+}
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-img{
-  filter: brightness(100%) contrast(70%) drop-shadow(5px 5px 5px  rgb(77, 74, 74));
+img {
+  filter: brightness(100%) contrast(70%)
+    drop-shadow(5px 5px 5px rgb(77, 74, 74));
   animation: fadeInAnimation ease 2.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  }
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-     }
 }
-  
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 #quote {
-  text-shadow: -2px -1px 0 rgb(172, 184, 103),
-  2px -1px 0 rgb(172, 184, 103),
-  -2px 1px 0 rgb(172, 184, 103),
-  2px 1px 0 rgb(172, 184, 103);  
-  color:rgb(243, 239, 239);
+  text-shadow: -2px -1px 0 rgb(172, 184, 103), 2px -1px 0 rgb(172, 184, 103),
+    -2px 1px 0 rgb(172, 184, 103), 2px 1px 0 rgb(172, 184, 103);
+  color: rgb(243, 239, 239);
   font-size: 6rem;
   letter-spacing: 2px;
   line-height: 8rem;
@@ -150,11 +157,9 @@ img{
   align-items: center;
   font-style: italic;
   font-family: 'Lora', serif;
-  
+
   animation: glitch 1s linear infinite; /* other keywords like "infinite alternate" can be useful here */
 }
-
-
 
 /* @keyframes color-me-in {
 
@@ -176,69 +181,75 @@ img{
    }
 } */
 
-@keyframes glitch{
-  2%,64%{
-    transform: translate(2px,0) skew(0deg);
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
   }
-  4%,60%{
-    transform: translate(-2px,0) skew(0deg);
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
   }
-  62%{
-    transform: translate(0,0) skew(5deg); 
+  62% {
+    transform: translate(0, 0) skew(5deg);
   }
 }
 
 div:before,
-div:after{
+div:after {
   content: attr(title);
   position: absolute;
   left: 0;
 }
 
-div:before{
+div:before {
   animation: glitchTop 1s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 }
 
-@keyframes glitchTop{
-  2%,64%{
-    transform: translate(2px,-2px);
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
   }
-  4%,60%{
-    transform: translate(-2px,2px);
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
   }
-  62%{
-    transform: translate(13px,-1px) skew(-13deg); 
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
   }
 }
 
-div:after{
+div:after {
   animation: glitchBotom 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-@keyframes glitchBotom{
-  2%,64%{
-    transform: translate(-2px,0);
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
   }
-  4%,60%{
-    transform: translate(-2px,0);
+  4%,
+  60% {
+    transform: translate(-2px, 0);
   }
-  62%{
-    transform: translate(-22px,5px) skew(21deg); 
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
   }
 }
 
 .footer {
   border: 5px solid white;
-  border-left:none;
-  border-right:none;
+  border-left: none;
+  border-right: none;
   /* border-bottom: none; */
   font: 2.5rem 'Roboto Condensed', sans-serif;
   position: fixed;
-  
+
   padding: 3px 3px 3px 3px;
   bottom: 0;
   width: 100%;
@@ -253,19 +264,6 @@ div:after{
   align-items: center;
 }
 
-#button {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  /* padding: 15px 32px; */
-  /* padding: 0.15rem 0.925rem 0.15rem 0.925rem; */
-  /* margin: 10px 50px 20px; */
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-left: 1rem;
-}
 /* .grid-container {
   display: grid;
   grid-template-areas:
@@ -295,11 +293,14 @@ div:after{
   position: sticky;
   z-index: 25;
   top: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 a {
-  font: 7rem "Cute Font", cursive;
-  position: fixed;
+  font: 7rem 'Cute Font', cursive;
+  /* position: fixed; */
+  position: sticky;
+  z-index: 25;
+  top: 0;
   animation-duration: 800ms;
   animation-name: blink;
   animation-iteration-count: infinite;
@@ -315,22 +316,22 @@ a {
   }
 } */
 @-webkit-keyframes blink {
-  0%{
+  0% {
     color: rgb(202, 132, 132);
   }
-  20%{
-    color: rgb(218, 172, 119);;
+  20% {
+    color: rgb(218, 172, 119);
   }
-  40%{
+  40% {
     color: rgb(183, 187, 126);
   }
-  60%{
+  60% {
     color: rgb(65, 134, 114);
   }
-  80%{
+  80% {
     color: rgb(122, 202, 226);
   }
-  100%{
+  100% {
     color: rgb(156, 122, 212);
   }
   /* from {
@@ -372,7 +373,6 @@ body,
   background-repeat: no-repeat;
   background-size: cover;
   overflow-x: hidden;
-
 }
 
 /* #bannerimage {
