@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import huyBanner from './assets/huyBanner.png';
 import roses from './assets/roses.jpeg';
 import All from './pages/All';
+import Shop from './pages/Shop';
 
 const App = () => {
 
@@ -53,7 +54,7 @@ const App = () => {
           <nav className='sidebar'>
             <div id='box'>
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  <Link to='/all'>All</Link>
+                  <Link to='/all' style={{ textDecoration: 'none' }} >All</Link>
                 <span className="bi bi-heart-fill"></span></button>
            
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
@@ -61,15 +62,15 @@ const App = () => {
                 <span className="bi bi-heart-fill"></span></button>
          
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  Micellaneous
+                <Link to='/miscellaneous'>Micellaneous</Link>
                 <span className="bi bi-heart-fill"></span></button>
          
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  Chocolate
+                <Link to='/chocolate'>Chocolate</Link>
                 <span className="bi bi-heart-fill"></span></button>
            
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  Cards
+                <Link to='/card'>Cards</Link>
                 <span className="bi bi-heart-fill"></span></button>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
            </div>
@@ -106,8 +107,10 @@ const App = () => {
 
       <Routes>
         <Route path="/all" element={<All />} />
-        {/* <Route path="/clothing" element={<All />} /> */}
-
+        <Route path="/clothing" element={<Shop page={'clothing'} />} />
+        <Route path="/miscellaneous" element={<Shop page={'miscellaneous'} />} />
+        <Route path="/chocolate" element={<Shop page={'sweets'} />} />
+        <Route path="/card" element={<Shop page={'card'} />} />
       </Routes>
 
     </BrowserRouter>

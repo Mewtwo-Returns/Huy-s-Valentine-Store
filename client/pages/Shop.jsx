@@ -4,7 +4,7 @@ import React from 'react';
 import '../../styles/page.css';
 import ProductCard from '../components/ProductCard';
 
-const All = () => {
+const Shop = (props) => {
 
     const [fetched, setFetched] = useState(false);
     const[productList, setProductList] = useState('');
@@ -12,7 +12,7 @@ const All = () => {
     const getProducts = async () => {
         // return await axios.get('/api/products')
 
-        const products = await fetch(`http://localhost:3000/api/products`, {
+        const products = await fetch(`http://localhost:3000/api/products/${props.page}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -56,4 +56,4 @@ const All = () => {
     );
 };
 
-export default All;
+export default Shop;

@@ -15,6 +15,7 @@
         "@mui/styles": "^5.4.1",
         "@reduxjs/toolkit": "^1.7.2",
         "axios": "^0.26.0",
+        "bcrypt": "^5.0.1",
         "cors": "^2.8.5",
         "css-loader": "^6.5.1",
         "dotenv": "^16.0.0",

@@ -7,3 +7,9 @@
 .description-text {
     font-size: 1.5rem;
 }
+
+.product-card{
+    /* flex-grow: 1;
+    display: inline-block; */
+    padding: 2rem 2rem 2rem 2rem;
+}

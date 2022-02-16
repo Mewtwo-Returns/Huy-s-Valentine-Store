@@ -34,6 +34,9 @@ const config = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         use: {
           loader: 'file-loader',
+          options: {
+            name: 'clients/components/public/[name].[ext]'
+          }
         },
       },
       {

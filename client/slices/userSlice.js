@@ -27,6 +27,9 @@ export const userSlice = createSlice({
       if (state.cart[action.payload]){ 
         state.cart[action.payload]--;
       }
+      // for (let item of state.cart){
+      //   if (state.cart[item] === 0) delete state.cart[item];
+      // }
     }
   },
 });
