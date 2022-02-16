@@ -41,14 +41,16 @@ const ProductCard = (props) => {
 
     return(
         <div className="card-container">
-            <Card sx={{ maxWidth: 320 }}>
+            <Card sx={{ minWidth: 400, maxWidth: 400 }}>
+                <div class="image-container">
                 <CardMedia
                     component="img"
-                    height="120"
+                    // height="auto"
                     image={props.image}
-                    image='https://scontent-lga3-1.xx.fbcdn.net/v/t39.30808-6/274151068_5048959448503143_3787574081341773627_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=0debeb&_nc_ohc=R0w8zMeDYRAAX-Y7m1d&tn=qWcAyokT1n4vRkP4&_nc_ht=scontent-lga3-1.xx&oh=00_AT9FjiX4AuSbUdkm1larwO5kX8afwblyN4apXzvYulQx_g&oe=6212382B'
                     alt={props.product}
+                    sx={{ minHeight: 300, maxHeight: 300, objectFit: 'contain' }}
                 />
+                </div>
                 <CardContent>
                     <h5 className="card-title-container">
                     <div className="card-title">{props.product}</div>
@@ -58,8 +60,8 @@ const ProductCard = (props) => {
                     <div class="description-text">{props.description}</div>
                     </Typography>
                 </CardContent>
-                <CardActions>
-                    <Button size="medium" variant="contained" onClick={() => addCart(props.product)}>Add To Cart</Button>
+                <CardActions class="card-container">
+                    <Button size="medium" variant="contained" onClick={() => addCart(props.product)} class='btn'>Add To Cart</Button>
                 </CardActions>
             </Card>
         </div>

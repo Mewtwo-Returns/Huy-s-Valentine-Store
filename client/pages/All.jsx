@@ -27,7 +27,6 @@ const All = () => {
         const result = [];
         const products = getProducts()
         .then(data => {
-            // console.log('this is data', data); //array of objects
             for (let i = 0; i < data.length; i++){
                 result.push(<ProductCard
                     className="product-card"
@@ -38,19 +37,15 @@ const All = () => {
                     description={data[i].product_description}
                 />);
             };
-            console.log('this is result', result); //array of react components
+            // console.log('this is result', result); //array of react components
             setProductList(result);
         })
-        
-        
-    //     console.log('this is data', products);
         
         setFetched(true);
     }, []);
 
     return(
         <div class="card-container">
-            all page
             {fetched ? <>{productList}</> : ''}
         </div>
     );

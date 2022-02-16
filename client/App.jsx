@@ -58,25 +58,31 @@ const App = () => {
           {/* Category Section */}
           <nav className='sidebar'>
             <div id='box'>
-                <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  <Link to='/all' style={{ textDecoration: 'none' }} >All</Link>
+               <Link to='/all' >
+                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
+                  All
                 <span className="bi bi-heart-fill"></span></button>
-           
+              </Link>
+              <Link to='/clothing'>
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  <Link to='/clothing'>Clothing</Link>
+                  Clothing
                 <span className="bi bi-heart-fill"></span></button>
-         
+              </Link>
+              <Link to='/miscellaneous'>
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                <Link to='/miscellaneous'>Micellaneous</Link>
+                  Micellaneous
                 <span className="bi bi-heart-fill"></span></button>
-         
+              </Link>
+              <Link to='/chocolate'>
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                <Link to='/chocolate'>Chocolate</Link>
+                  Chocolate
                 <span className="bi bi-heart-fill"></span></button>
-           
+              </Link>
+              <Link to='/card'>
                 <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                <Link to='/card'>Cards</Link>
+                  Cards
                 <span className="bi bi-heart-fill"></span></button>
+              </Link>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
            </div>
           </nav>
@@ -112,10 +118,10 @@ const App = () => {
 
       <Routes>
         <Route path="/all" element={<All />} />
-        <Route path="/clothing" element={<Shop page={'clothing'} />} />
-        <Route path="/miscellaneous" element={<Shop page={'miscellaneous'} />} />
-        <Route path="/chocolate" element={<Shop page={'sweets'} />} />
-        <Route path="/card" element={<Shop page={'card'} />} />
+        <Route path="/clothing" element={<Shop page='clothing' />} />
+        <Route path="/miscellaneous" element={<Shop page='miscellaneous' />} />
+        <Route path="/chocolate" element={<Shop page='sweets' />} />
+        <Route path="/card" element={<Shop page='card' />} />
       </Routes>
 
       <>

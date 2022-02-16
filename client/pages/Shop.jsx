@@ -9,10 +9,10 @@ const Shop = (props) => {
     const [fetched, setFetched] = useState(false);
     const[productList, setProductList] = useState('');
 
-    const getProducts = async () => {
+    const getProducts = () => {
         // return await axios.get('/api/products')
-
-        const products = await fetch(`http://localhost:3000/api/products/${props.page}`, {
+        console.log('this is props', props)
+        const products = fetch(`http://localhost:3000/api/products/${props.page}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,8 +26,8 @@ const Shop = (props) => {
     useEffect(() => {
         const result = [];
         const products = getProducts()
+        
         .then(data => {
-            // console.log('this is data', data); //array of objects
             for (let i = 0; i < data.length; i++){
                 result.push(<ProductCard
                     className="product-card"
@@ -38,21 +38,21 @@ const Shop = (props) => {
                     description={data[i].product_description}
                 />);
             };
-            console.log('this is result', result); //array of react components
+            // console.log('this is result', result); //array of react components
             setProductList(result);
         })
         
-        
-    //     console.log('this is data', products);
-        
         setFetched(true);
-    }, []);
+        // return () => {
+        //     setProductList('');
+        // }
+    }, [props.page]);
 
     return(
         <div class="card-container">
-            all page
             {fetched ? <>{productList}</> : ''}
         </div>
+
     );
 };
 
