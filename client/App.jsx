@@ -7,13 +7,16 @@ import CartBar from './components/Cart/CartBar';
 
 const App = () => {
 
-  const [cartToggle, setCartToggle] = useState(true);
+  const [cartToggle, setCartToggle] = useState(false);
+  const [signInModalToggle, setSignInModalToggle] = useState(true);
+  const [signUpModalToggle, setSignUpModalToggle] = useState(false);
 
   return (
     <>
       <div>This is Huy</div>
-      {/* <SignUpModal onCloseButtonClick={() => console.log('todo')} /> */}
       {cartToggle && <CartBar setCartToggle={setCartToggle}/>}
+      {signInModalToggle && <SignInModal setSignInModalToggle={setSignInModalToggle} setSignUpModalToggle={setSignUpModalToggle}/>}
+      {signUpModalToggle && <SignUpModal setSignInModalToggle={setSignInModalToggle} setSignUpModalToggle={setSignUpModalToggle}/>}
     </>
   );
 };

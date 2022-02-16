@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { getUsername } from '../../slices/userSlice';
 // import logo from '../../assets/danger-pin.png'
 
-const signInModal =  ({onCloseButtonClick}) => {
+const signInModal =  ({setSignInModalToggle, setSignUpModalToggle}) => {
 
   const signIn = (e) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ const signInModal =  ({onCloseButtonClick}) => {
   return (
     <div id="modal-overlay">
       <div id="modal-container">
-        <AiOutlineCloseCircle class="exit-modal" onClick={(e) => onCloseButtonClick()}/>
+        <AiOutlineCloseCircle className="exit-modal" onClick={(e) => setSignInModalToggle(false)}/>
         <div id = "login-section">
           <h1 className="sign-in"> Sign In </h1>
           <div id="sign-in-blurb">
@@ -31,7 +31,7 @@ const signInModal =  ({onCloseButtonClick}) => {
               <input className="form-input" type="email" name="email" placeholder="Enter your username" required/>
             </div>
             <div>
-              <label htmlFor="password">Password*</label>
+              <label htmlFor="password">PASSWORD*</label>
               <input className="form-input" type="password" name="password" placeholder="Enter your password" required/>
             </div>
             <div id="button-container">
@@ -47,7 +47,10 @@ const signInModal =  ({onCloseButtonClick}) => {
             <p>Welcome! It&apos;s quick and easy to set up an account</p>
           </div>
           <div id="button-container">
-            <button id="secondary-button" className="form-button" onClick={console.log('TODO')}>Create an account</button>
+            <button id="secondary-button" className="form-button" 
+              onClick={() => {setSignUpModalToggle(true);setSignInModalToggle(false);}}>
+                Create an account
+            </button>
           </div>
         </div>
       </div>

@@ -127,7 +127,6 @@
   font: 1.6rem/1.2 'Poppins', sans-serif
 }
 
-
 #button-bar > button:disabled{
   cursor:default;
   width: 100%;
