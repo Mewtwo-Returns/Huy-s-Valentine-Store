@@ -45,7 +45,7 @@ const All = () => {
     }, []);
 
     return(
-        <div class="card-container">
+        <div className="card-container">
             {fetched ? <>{productList}</> : ''}
         </div>
     );

@@ -49,7 +49,7 @@ const Shop = (props) => {
     }, [props.page]);
 
     return(
-        <div class="card-container">
+        <div className="card-container">
             {fetched ? <>{productList}</> : ''}
         </div>
 

@@ -42,7 +42,7 @@ const ProductCard = (props) => {
     return(
         <div className="card-container">
             <Card sx={{ minWidth: 400, maxWidth: 400 }}>
-                <div class="image-container">
+                <div className="image-container">
                 <CardMedia
                     component="img"
                     // height="auto"
@@ -57,11 +57,11 @@ const ProductCard = (props) => {
                     <div className="card-title">{props.price}</div>
                     </h5>
                     <Typography variant="body2" color="text.secondary">
-                    <div class="description-text">{props.description}</div>
+                    <div className="description-text">{props.description}</div>
                     </Typography>
                 </CardContent>
-                <CardActions class="card-container">
-                    <Button size="medium" variant="contained" onClick={() => addCart(props.product)} class='btn'>Add To Cart</Button>
+                <CardActions className="card-container">
+                    <Button size="medium" variant="contained" onClick={() => addCart(props.product)} className='btn'>Add To Cart</Button>
                 </CardActions>
             </Card>
         </div>

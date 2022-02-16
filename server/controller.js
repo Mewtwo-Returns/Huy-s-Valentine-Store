@@ -127,7 +127,7 @@ controller.getProductsByCategory = async(req, res, next) => {
       req.params.category
     ]
     const result = await db.query(queryStr, params);
-    console.log(result)
+    console.log("this is result!!!!!!!!!", result)
     const data = result.rows;
 
     res.locals.getProductsByCategory = data;

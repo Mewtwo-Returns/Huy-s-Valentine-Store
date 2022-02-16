@@ -21,7 +21,7 @@ const signUpModal =  ({onCloseButtonClick}) => {
   return (
     <div id="modal-overlay">
       <div id="modal-container">
-        <AiOutlineCloseCircle class="exit-modal" onClick={(e) => onCloseButtonClick()}/>
+        <AiOutlineCloseCircle className="exit-modal" onClick={(e) => onCloseButtonClick()}/>
         <div id = "login-section">
           <h1 className="sign-in"> Create An Account </h1>
           <div id="sign-in-blurb">
