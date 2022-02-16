@@ -47,7 +47,7 @@ const signUpModal =  ({setSignInModalToggle, setSignUpModalToggle}) => {
             </div>
             <div>
               <label htmlFor="email">EMAIL*</label>
-              <input className="form-input" type="email" name="email" placeholder="Enter your username" required/>
+              <input className="form-input" type="email" name="email" placeholder="Enter your email" required/>
             </div>
             <div>
               <label htmlFor="password">PASSWORD*</label>

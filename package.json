@@ -9,6 +9,7 @@
         "dev": "concurrently \"NODE_ENV=development webpack serve --open\" \"nodemon server/server.js\""
     },
     "dependencies": {
+        "@emailjs/browser": "^3.4.0",
         "@reduxjs/toolkit": "^1.7.2",
         "axios": "^0.26.0",
         "bcrypt": "^5.0.1",

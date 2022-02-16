@@ -4,6 +4,7 @@ import '../styles/_base.css';
 import '../styles/_transitions.css';
 import SignInModal from './components/Modals/SignInModal';
 import SignUpModal from './components/Modals/SignUpModal';
+import LetterModal from './components/Modals/LetterModal';
 import {CSSTransition} from 'react-transition-group';
 import CartBar from './components/Cart/CartBar';
 import '../styles/cart.css';
@@ -11,8 +12,9 @@ import '../styles/cart.css';
 const App = () => {
 
   const [cartToggle, setCartToggle] = useState(false);
-  const [signInModalToggle, setSignInModalToggle] = useState(true);
+  const [signInModalToggle, setSignInModalToggle] = useState(false);
   const [signUpModalToggle, setSignUpModalToggle] = useState(false);
+  const [letterModalToggle, setLetterModalToggle] = useState(true);
 
   return (
     <div id="app">
@@ -25,6 +27,7 @@ const App = () => {
       </CSSTransition>
       {signInModalToggle && <SignInModal setSignInModalToggle={setSignInModalToggle} setSignUpModalToggle={setSignUpModalToggle}/>}
       {signUpModalToggle && <SignUpModal setSignInModalToggle={setSignInModalToggle} setSignUpModalToggle={setSignUpModalToggle}/>}
+      {letterModalToggle && <LetterModal setLetterModalToggle={setLetterModalToggle}/>}
     </div>
   );
 };
