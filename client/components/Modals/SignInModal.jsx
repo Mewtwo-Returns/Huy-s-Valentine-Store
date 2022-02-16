@@ -1,25 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../../../styles/modalStyles.css';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { useDispatch } from 'react-redux';
+import { AiOutlineClose } from 'react-icons/ai';
+import { useDispatch, useSelector } from 'react-redux';
 import { getUsername } from '../../slices/userSlice';
-// import logo from '../../assets/danger-pin.png'
+import { IconContext } from 'react-icons';
 
 const signInModal =  ({setSignInModalToggle, setSignUpModalToggle}) => {
 
+  const { isSuccess } = useSelector((state) => state.user);
+
   const signIn = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    dispatch(getUsername(email, password));
+    const email = e.target.form[0].value;
+    const password = e.target.form[1].value;
+    console.log('signin', email, password);
+    dispatch(getUsername({email, password}));
   };
+
+  useEffect(() => {
+    if (isSuccess) setSignInModalToggle(false);
+  }, [isSuccess]);
 
   const dispatch = useDispatch();
 
   return (
     <div id="modal-overlay">
       <div id="modal-container">
-        <AiOutlineCloseCircle className="exit-modal" onClick={(e) => setSignInModalToggle(false)}/>
+        <IconContext.Provider value={{className: 'exit-modal', size:'1.9em'}}>
+          <AiOutlineClose onClick={(e) => setSignInModalToggle(false)}/>
+        </IconContext.Provider>
         <div id = "login-section">
           <h1 className="sign-in"> Sign In </h1>
           <div id="sign-in-blurb">

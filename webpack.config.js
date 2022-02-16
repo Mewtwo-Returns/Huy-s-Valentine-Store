@@ -6,7 +6,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  entry: ['./client/index.js'],
+  entry: ['babel-polyfill', './client/index.js'],
   output: {
     path: path.resolve(__dirname, 'client/build'),
     filename: 'bundle.js',
@@ -47,6 +47,7 @@ const config = {
       },
     ],
   },
+  mode: 'development',
   devtool: 'eval-source-map',
   devServer: {
     historyApiFallback: true,
@@ -56,12 +57,12 @@ const config = {
       directory: './client/build',
     },
     proxy: {
-      '/api': {
+      '/api/**': {
         target: 'http://localhost:3000/',
-        pathRewrite: { '^/api': '' },
         secure: false,
       },
     },
+    host: 'localhost',
     port: 8080,
   },
   plugins: [

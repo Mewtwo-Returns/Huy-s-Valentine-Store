@@ -1,0 +1,35 @@
+/* .expanded-transition-enter,
+.expanded-transition-appear{
+  top: 0;
+  right: -400px;
+  height: 100%;
+  color: transparent;
+  background-color: transparent;
+  transition: all 2000ms;
+}
+
+.expanded-transition-enter-active,
+.expanded-transition-appear-active {
+  top: 0;
+  right: 400px;
+  background-color: #c94646;
+  color: white;
+  transition: all 2000ms;
+}
+
+.expanded-transition-exit {
+  top: 0;
+  right: 0;
+  background-color: #c94646;
+  color: white;
+  transition: all 400ms;
+}
+
+.expanded-transition-exit-active {
+  top: 0;
+  right: -400px;
+  height: 100%;
+  color: transparent;
+  background-color: transparent;
+  transition: all 400ms;
+} */

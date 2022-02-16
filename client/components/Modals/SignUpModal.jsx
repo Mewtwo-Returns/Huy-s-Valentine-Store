@@ -1,27 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../../../styles/modalStyles.css';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { useDispatch } from 'react-redux';
+import { AiOutlineClose } from 'react-icons/ai';
+import { useDispatch, useSelector } from 'react-redux';
 import { signup } from '../../slices/userSlice';
-// import logo from '../../assets/danger-pin.png'
+import { IconContext } from 'react-icons';
 
 const signUpModal =  ({setSignInModalToggle, setSignUpModalToggle}) => {
 
+  const { isSuccess } = useSelector((state) => state.user);
+
   const signUp = (e) => {
     e.preventDefault();
-    const firstName = e.target.firstName.value;
-    const lastName = e.target.lastName.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    dispatch(signup(firstName, lastName, email, password));
+    console.log(e);
+    const first_name = e.target.form[0].value;
+    const last_name = e.target.form[1].value;
+    const email = e.target.form[2].value;
+    const user_password = e.target.form[3].value;
+    dispatch(signup({first_name, last_name, email, user_password}));
   };
+
+  useEffect(() => {
+    if (isSuccess) setSignUpModalToggle(false);
+  }, [isSuccess]);
 
   const dispatch = useDispatch();
 
   return (
     <div id="modal-overlay">
       <div id="modal-container">
-        <AiOutlineCloseCircle className="exit-modal" onClick={() => setSignUpModalToggle(false)}/>
+        <IconContext.Provider value={{className: 'exit-modal', size:'1.9em'}}>
+          <AiOutlineClose onClick={() => setSignUpModalToggle(false)}/>
+        </IconContext.Provider>
         <div id = "login-section">
           <h1 className="sign-in"> Create An Account </h1>
           <div id="sign-in-blurb">
