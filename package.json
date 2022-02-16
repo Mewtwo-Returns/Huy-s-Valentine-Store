@@ -10,8 +10,10 @@
     },
     "dependencies": {
         "@reduxjs/toolkit": "^1.7.2",
+        "bcrypt": "^5.0.1",
         "cors": "^2.8.5",
         "css-loader": "^6.5.1",
+        "dotenv": "^16.0.0",
         "express": "^4.17.2",
         "html-webpack-plugin": "^5.5.0",
         "jest": "^27.5.1",
