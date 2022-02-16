@@ -21,6 +21,7 @@ import '../styles/cart.css';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BiUserCircle } from 'react-icons/bi';
 import { RiChatHeartFill } from 'react-icons/ri';
+import { useSelector } from 'react-redux';
 
 const App = () => {
 
@@ -28,6 +29,7 @@ const App = () => {
   const [signInModalToggle, setSignInModalToggle] = useState(false);
   const [signUpModalToggle, setSignUpModalToggle] = useState(false);
   const [letterModalToggle, setLetterModalToggle] = useState(false);
+  const firstName = useSelector((state) => state.user.firstName);
 
   return (
     <BrowserRouter>
@@ -44,10 +46,11 @@ const App = () => {
         <header className='header'>
           {/* <div className='brand'> */}
           {/* <button onClick={openMenu}>&#9776;</button> */}
+          <a href="/" className="title">HUY&apos;S VALENTINE SHOP</a> 
           <BiUserCircle className="icon" size={80} onClick={() => setSignInModalToggle(true)} style={{alignSelf: 'flex-end' , bottom: 8, position:'absolute' , right:125}}/>
           <AiOutlineShoppingCart className="icon" size={75} onClick={() => setCartToggle(true)}
             style={{alignSelf: 'flex-end' , position:'absolute' , bottom: 11, right:50 }}/> 
-          <a href="/" className="title">HUY&apos;S VALENTINE SHOP</a> 
+            <p style={{textShadow: 'none', fontFamily: 'Cute Font', alignItem: 'center', alignSelf: 'flex-end', position:'absolute',  right:250, bottom: 20, fontSize: '5rem', letterSpacing:"1px"}}>Welcome, {firstName ? firstName : 'Guest'}</p>
               
           <div className='header-links'>
             {/* <Link to='/cart'>
@@ -127,7 +130,7 @@ const App = () => {
       </Routes>
 
       {/* <SignUpModal onCloseButtonClick={() => console.log('todo')} /> */}
-      {cartToggle && <CartBar setCartToggle={setCartToggle} />}
+      {/* {cartToggle && <CartBar setCartToggle={setCartToggle} />} */}
       <footer className='footer'>Copyright &#169; 2019-2022 Huy&apos;s Instagram/Tiktok. All rights reserved.</footer>
     </BrowserRouter>
   ); 

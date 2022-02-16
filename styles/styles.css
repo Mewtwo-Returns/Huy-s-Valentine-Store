@@ -112,10 +112,10 @@ textarea {
   top: 0;
   align-items: center;
 }
-#img1 {
+/* #img1 {
   filter: contrast(90%) brightness(120%);
-  filter: saturate(90%);
-  animation: fadeInAnimation ease 2.5s;
+  filter: saturate(90%); */
+  /* animation: fadeInAnimation ease 2.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -125,36 +125,20 @@ textarea {
   }
   100% {
     opacity: 1;
-  }
-}
-
-/* img {
-  filter: brightness(100%) contrast(70%)
-    drop-shadow(5px 5px 5px rgb(77, 74, 74));
-  animation: fadeInAnimation ease 2.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
+  } */
+/* } */
 
 #quote {
   text-shadow: -2px -1px 0 rgb(172, 184, 103), 2px -1px 0 rgb(172, 184, 103),
     -2px 1px 0 rgb(172, 184, 103), 2px 1px 0 rgb(172, 184, 103);
   color: rgb(243, 239, 239);
-  font-size: 6rem;
+  font-size: 6.8rem;
   letter-spacing: 2px;
   line-height: 8rem;
   margin: 25rem;
   margin-top: 40rem;
-  margin-right: -2rem;
-  margin-left: 32rem;
+  margin-right: 1rem;
+  margin-left: 50rem;
   justify-content: center;
   align-items: center;
   font-style: italic;
