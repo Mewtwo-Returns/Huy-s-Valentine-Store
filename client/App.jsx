@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/_reset.css';
 import '../styles/_base.css';
 import '../styles/styles.css';
@@ -9,8 +9,13 @@ import huyBanner from './assets/huyBanner.png';
 import roses from './assets/roses.jpeg';
 import All from './pages/All';
 import Shop from './pages/Shop';
+import SignInModal from './components/Modals/SignInModal';
+import SignUpModal from './components/Modals/SignUpModal';
+import CartBar from './components/Cart/CartBar';
 
 const App = () => {
+
+  const [cartToggle, setCartToggle] = useState(true);
 
   return (
     
@@ -113,10 +118,14 @@ const App = () => {
         <Route path="/card" element={<Shop page={'card'} />} />
       </Routes>
 
+      <>
+      <div>This is Huy</div>
+      {/* <SignUpModal onCloseButtonClick={() => console.log('todo')} /> */}
+      {cartToggle && <CartBar setCartToggle={setCartToggle}/>}
+    </>
+
     </BrowserRouter>
   ); 
   }
-
-
 
 export default App;
