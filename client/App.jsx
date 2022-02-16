@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/_reset.css';
 import '../styles/_base.css';
 import SignInModal from './components/Modals/SignInModal';
@@ -7,11 +7,13 @@ import CartBar from './components/Cart/CartBar';
 
 const App = () => {
 
+  const [cartToggle, setCartToggle] = useState(true);
+
   return (
     <>
       <div>This is Huy</div>
       {/* <SignUpModal onCloseButtonClick={() => console.log('todo')} /> */}
-      <CartBar />
+      {cartToggle && <CartBar setCartToggle={setCartToggle}/>}
     </>
   );
 };
