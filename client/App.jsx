@@ -43,13 +43,13 @@ const App = () => {
               {/* {user ? <Link to='/profile'>{user.first_name}</Link> : <Link to='/signin'>Sign In</Link>}
               {user && user.isAdmin && (
                 <div className='dropdown'>
-                  <Link to='/orders'>Admin</Link>
-                  <ul className='dropdown-content'>
-                    <li>
-                      <Link to='/orders'>Orders</Link>
-                      <Link to='/products'>Products</Link>
-                    </li>
-                  </ul>
+                <Link to='/orders'>Admin</Link>
+                <ul className='dropdown-content'>
+                <li>
+                <Link to='/orders'>Orders</Link>
+                <Link to='/products'>Products</Link>
+                </li>
+                </ul>
                 </div>
               )} */}
             </div>
@@ -57,7 +57,7 @@ const App = () => {
   
             {/* <div id='box'>
             <button className='button'>All</button>
-            </div>   */}
+          </div>   */}
           {/* Category Section */}
           <nav className='sidebar'>
             <div id='navbar'>
