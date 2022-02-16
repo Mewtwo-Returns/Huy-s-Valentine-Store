@@ -1,0 +1,13 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: -10px 0 0 -10px; */
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.product-card {
+  flex-shrink: 1;
+  /* display: inline-block; */
+  padding: 0 2rem 0 2rem;
+  margin: 2rem 2rem;
+}

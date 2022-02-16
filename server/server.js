@@ -1,11 +1,17 @@
 const express = require('express');
 const path = require('path');
 const pool = require('./database');
+const cors = require('cors');
 
 const app = express();
 
 const PORT = 3000;
 const apiRouter = require('./api');
+
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 /**
  * handle parsing request body
@@ -13,6 +19,8 @@ const apiRouter = require('./api');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
  
+ app.use(cors(corsOptions));
+
 /**
  * handle requests for static files
  */

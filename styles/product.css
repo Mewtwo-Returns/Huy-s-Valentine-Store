@@ -1,0 +1,25 @@
+.card-title-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2.5rem;
+}
+
+.description-text {
+  font-size: 1.5rem;
+}
+
+.product-card {
+  /* flex-grow: 1;
+    display: inline-block; */
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.btn {
+  position: relative;
+  bottom: 1rem;
+  padding: 0 0 0 1rem;
+}
+
+.card-container {
+  justify-content: center;
+}
