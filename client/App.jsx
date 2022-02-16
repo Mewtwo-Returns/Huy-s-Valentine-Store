@@ -14,7 +14,7 @@ const App = () => {
   const [cartToggle, setCartToggle] = useState(false);
   const [signInModalToggle, setSignInModalToggle] = useState(false);
   const [signUpModalToggle, setSignUpModalToggle] = useState(false);
-  const [letterModalToggle, setLetterModalToggle] = useState(true);
+  const [letterModalToggle, setLetterModalToggle] = useState(false);
 
   return (
     <div id="app">
