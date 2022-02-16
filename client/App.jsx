@@ -6,6 +6,7 @@ import '../styles/styles.css';
 import ProductCard from './components/ProductCard';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import huyBanner from './assets/huyBanner.png';
+import huyBanner2 from './assets/huyBanner2.png';
 import huyWelcomingU from './assets/huyWelcomingU.png';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BiUserCircle } from 'react-icons/bi';
@@ -15,7 +16,6 @@ const App = () => {
   return (
     
       <BrowserRouter>
-      {/* <ProductCard/> */}
         <div className='grid-container'>
         
           <header className='header'>
@@ -33,13 +33,13 @@ const App = () => {
               {/* {user ? <Link to='/profile'>{user.first_name}</Link> : <Link to='/signin'>Sign In</Link>}
               {user && user.isAdmin && (
                 <div className='dropdown'>
-                  <Link to='/orders'>Admin</Link>
-                  <ul className='dropdown-content'>
-                    <li>
-                      <Link to='/orders'>Orders</Link>
-                      <Link to='/products'>Products</Link>
-                    </li>
-                  </ul>
+                <Link to='/orders'>Admin</Link>
+                <ul className='dropdown-content'>
+                <li>
+                <Link to='/orders'>Orders</Link>
+                <Link to='/products'>Products</Link>
+                </li>
+                </ul>
                 </div>
               )} */}
             </div>
@@ -47,7 +47,7 @@ const App = () => {
   
             {/* <div id='box'>
             <button className='button'>All</button>
-            </div>   */}
+          </div>   */}
           {/* Category Section */}
           <nav className='sidebar'>
             <div id='box'>
@@ -82,18 +82,18 @@ const App = () => {
               <Route path='/card' component={SigninContainer} />
               <Route path='/miscellaneous' component={ProfileContainer} />
               <Route path='/clothing' exact component={ProductsContainer} />
-              <Route path='/' exact component={HomeContainer} /> */}
+            <Route path='/' exact component={HomeContainer} /> */}
           {/* <body> */}
             {/* <div className="gfg"> */}
             {/* <img  src={roses}> */}
             {/* <div id='bannerimage'> */}
+            {/* <ProductCard/> */}
             <div style={{display: 'flex', justifyContent: 'space-between'}}>
-              {/* <img id='img1' src={huyBanner} style={{marginTop: '200px', marginRight: '-100px', width: '550px',height: '800px' }}/> */}
-              
+              {/* <img id='img1' src={huyBanner} style={{marginTop: '80px', marginRight: '0px', width: '650px',height: '900px' }}/> */}
                 <div id='quote'>
                 Is your name Stretch? Because I feel like a king when I'm next to you...
                 </div>
-                <img id='img2' src={huyWelcomingU} style={{ marginTop: '160px', marginRight: '250px', width: '600px', height:'800px'}}/>
+                <img id='img2' src={huyWelcomingU} style={{ marginTop: '160px', marginRight: '200px', width: '600px', height:'800px'}}/>
             </div>
             {/* </div> */}
             {/* </img> */}

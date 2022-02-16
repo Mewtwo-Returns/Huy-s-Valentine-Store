@@ -102,8 +102,8 @@ button:hover {
   position: fixed;
 }
 #img1{
-  filter: contrast(90%) brightness(120%);
-  filter: saturate(90%);
+  filter: contrast(80%) brightness(150%);
+  /* filter: saturate(90%); */
   animation: fadeInAnimation ease 2.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -117,7 +117,7 @@ button:hover {
      }
 }
 
-img{
+#img2{
   filter: brightness(100%) contrast(70%) drop-shadow(5px 5px 5px  rgb(77, 74, 74));
   animation: fadeInAnimation ease 2.5s;
   animation-iteration-count: 1;
@@ -132,7 +132,7 @@ img{
      }
 }
   
-#quote {
+ #quote {
   text-shadow: -2px -1px 0 rgb(172, 184, 103),
   2px -1px 0 rgb(172, 184, 103),
   -2px 1px 0 rgb(172, 184, 103),
@@ -141,19 +141,38 @@ img{
   font-size: 6rem;
   letter-spacing: 2px;
   line-height: 8rem;
-  /* padding: 25rem; */
   margin: 25rem;
   margin-top: 40rem;
   margin-right: 6rem;
-  margin-left: 20rem;
+  margin-left: 22rem;
   justify-content: center;
   align-items: center;
   font-style: italic;
   font-family: 'Lora', serif;
   
-  animation: glitch 1s linear infinite; /* other keywords like "infinite alternate" can be useful here */
-}
+  animation: glitch 1s linear infinite; 
+} 
 
+/* #quote {
+  text-shadow: -2px -1px 0 rgb(172, 184, 103),
+  2px -1px 0 rgb(172, 184, 103),
+  -2px 1px 0 rgb(172, 184, 103),
+  2px 1px 0 rgb(172, 184, 103);  
+  color:rgb(243, 239, 239);
+  font-size: 7.5rem;
+  letter-spacing: 2px;
+  line-height: 12rem;
+  margin: 25rem;
+  margin-top: 35rem;
+  margin-right: 10rem;
+  margin-left: 15rem;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  font-family: 'Lora', serif;
+  
+  animation: glitch 1s linear infinite; 
+} */
 
 
 /* @keyframes color-me-in {
