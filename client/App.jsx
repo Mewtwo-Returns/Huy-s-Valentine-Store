@@ -6,7 +6,9 @@ import '../styles/styles.css';
 import ProductCard from './components/ProductCard';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import huyBanner from './assets/huyBanner.png';
-import roses from './assets/roses.jpeg';
+import huyWelcomingU from './assets/huyWelcomingU.png';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { BiUserCircle } from 'react-icons/bi';
 
 const App = () => {
 
@@ -15,16 +17,15 @@ const App = () => {
       <BrowserRouter>
       {/* <ProductCard/> */}
         <div className='grid-container'>
-  
+        
           <header className='header'>
-            <div className='brand'>
+            {/* <div className='brand'> */}
               {/* <button onClick={openMenu}>&#9776;</button> */}
-              <Link to='/'>Huy's Valentine Shop</Link>
-              {/* <div style={{display: 'flex', alignItems: 'center'}} > <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  All
-                <span className="bi bi-heart-fill"></span></button>
-              </div>   */}
-            </div>
+              <BiUserCircle className="icon" size={80} style={{alignSelf: "flex-end" , bottom: 8, position:'absolute' , right:125}}/>
+              <AiOutlineShoppingCart className="icon" size={75} 
+              style={{alignSelf: "flex-end" , position:'absolute' , bottom: 11, right:50 }}/> 
+              <a href="#">HUY'S VALENTINE SHOP</a> 
+              
             <div className='header-links'>
               {/* <Link to='/cart'>
                 Cart {cartItems.length > 0 ? `(Items: ${cartItems.reduce((a, c) => a + c.qty, 0)})` : 'is empty'}
@@ -50,24 +51,25 @@ const App = () => {
           {/* Category Section */}
           <nav className='sidebar'>
             <div id='box'>
-                <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  All
+                <button type='button' className="btn btn-primary" onClick={() => <Link to='/all'/>}><span className="bi bi-heart-fill"></span>
+                &nbsp;ALL&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
            
-                <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  Clothing
+                <button type='button' className="btn btn-primary" onClick={() => <Link to='/clothing'/>}><span className="bi bi-heart-fill"></span>
+                &nbsp;CLOTHING&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
          
-                <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  Micellaneous
+                <button type='button' className="btn btn-primary" onClick={() => <Link to='/micellaneous'/>}><span className="bi bi-heart-fill"></span>
+                &nbsp;MICELLANEOUS&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
          
-                <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  Chocolate
+                <button type='button' className="btn btn-primary" onClick={() => <Link to='/chocolate'/>}><span className="bi bi-heart-fill"></span>
+                &nbsp;CHOCOLATE&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
            
-                <button type='button' className="btn btn-primary" onClick={() => {console.log('hi')}}><span className="bi bi-heart-fill"></span>
-                  Cards
+                <button type='button' className="btn btn-primary" onClick={() => <Link to='/card'/>}>
+                  <span className="bi bi-heart-fill"></span>
+                &nbsp;CARD&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
                 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
            </div>
@@ -84,9 +86,16 @@ const App = () => {
           {/* <body> */}
             {/* <div className="gfg"> */}
             {/* <img  src={roses}> */}
-            <div id='bannerimage'>
-            <img src={huyBanner} />
+            {/* <div id='bannerimage'> */}
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+              {/* <img id='img1' src={huyBanner} style={{marginTop: '200px', marginRight: '-100px', width: '550px',height: '800px' }}/> */}
+              
+                <div id='quote'>
+                Is your name Stretch? Because I feel like a king when I'm next to you...
+                </div>
+                <img id='img2' src={huyWelcomingU} style={{ marginTop: '160px', marginRight: '250px', width: '600px', height:'800px'}}/>
             </div>
+            {/* </div> */}
             {/* </img> */}
               {/* <h3 className="first-txt">
                 GeeksforGeeks
@@ -99,8 +108,8 @@ const App = () => {
           </body> */}
             {/* </main>
           </div> */}
-        <footer className='footer'>Copyright &#169; 2019 Huy's Instagram/Tiktok. All rights reserved.</footer>
       </div>
+      <footer className='footer'>Copyright &#169; 2019-2022 Huy's Instagram/Tiktok. All rights reserved.</footer>
     </BrowserRouter>
   ); 
   }
