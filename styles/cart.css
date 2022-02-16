@@ -7,7 +7,9 @@
   padding: 10px 20px;
   background-color: var(--site-background);
   height: 100%;
-  min-width: 500px;
+  /* min-width: 500px; */
+  width: 30%;
+  max-width: 500px;
   z-index: 1000;
 }
 
@@ -39,6 +41,12 @@
   flex-direction: column;
   gap: 20px;
   padding-right: 40px;
+}
+
+#emptyMsg {
+  display: flex;
+  flex-direction: column;
+  font: 1.4rem/1.2 'Poppins', sans-serif;
 }
 
 #item {
@@ -119,3 +127,11 @@
   font: 1.6rem/1.2 'Poppins', sans-serif
 }
 
+
+#button-bar > button:disabled{
+  cursor:default;
+  width: 100%;
+  background-color: black;
+  color: var(--text-medium);
+  font: 1.6rem/1.2 'Poppins', sans-serif
+}

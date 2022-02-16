@@ -9,31 +9,31 @@ import '../../../styles/cart.css';
 
 const CartBar = ({setCartToggle}) => {
 
-  const items = useSelector((state) => state.cart.items);
-  console.log(items);
-  const subTotal = useSelector((state) => state.cart.subTotal);
-
-  const cart = items.map((item, idx) => {
-    return <CartItem item={item} key={idx} id={idx}/>;
-  });
   const dispatch = useDispatch();
-
   const checkout = () => {
     dispatch(checkoutCart());
     setCartToggle(false);
   };
+  const items = useSelector((state) => state.cart.items);
+  const cartIsEmpty = items.length === 0;
 
-  // const cartObj = {
-  //   item: {name:'rurubear', price:'69.69', quantity:2,
-  //     imgSrc:'https://www.google.com/search?q=bear&newwindow=1&rlz=1C1CHBF_enUS926US926&sxsrf=APq-WBu2R_ng5aKE7R3bT9SSEzRqOAlW8w:1644955957241&tbm=isch&source=iu&ictx=1&vet=1&fir=4pmHKW_ibk5lHM%252C_44HmSV8bjuyUM%252C%252Fm%252F01dws%253Bcl-N6jp1kdRVFM%252CT0ykaEdayPVliM%252C_%253Be9Cdbm42G0KSyM%252C9AZ3Ofag3gKqnM%252C_%253BvDvfzY6M55wL5M%252CjY3Eu-hQkjMyVM%252C_%253Bwygrv1m1Nx-HPM%252CiIpysUGamGsiyM%252C_%253BtLEHQpVh-uvdeM%252C7gW1Yg3rpR3ykM%252C_%253BkX2jrdsVcSaZ4M%252Cenu_UdVHllKHPM%252C_&usg=AI4_-kRnQC64-EINJOIe5W7NOSy6mxfzZQ&sa=X&ved=2ahUKEwj4iIK8woL2AhWrd98KHV-gB7oQ_B16BAg6EAE#imgrc=4pmHKW_ibk5lHM',},
-  //   subtotal: 50, 
-  // };
-  // const item = cartObj.item;
-  // const cart = [<CartItem item={item} key='1'/>];
-  // const subTotal = cartObj.subtotal;
-  const shipping = 15;
-  const calcTax = Number((subTotal * .0975).toFixed(2));
-  const total = subTotal + shipping + calcTax;
+  let subTotal = 0;
+  let cart = [];
+  let shipping = 0;
+  let calcTax = 0;
+  let total = 0;
+
+  if (!cartIsEmpty){
+    cart = items.map((item, idx) => {
+      subTotal += (item.price * item.quantity);
+      return <CartItem item={item} key={idx} id={idx}/>;
+    });
+  
+    shipping = 15;
+    calcTax = Number((subTotal * .0975).toFixed(2));
+    total = Number(subTotal + shipping + calcTax).toFixed(2);
+  }
+  
 
   return (
     <div id="modal-overlay">
@@ -49,6 +49,7 @@ const CartBar = ({setCartToggle}) => {
         </div>
         <div id="cart-items-container">
           {cart}
+          {cartIsEmpty && <div id="emptyMsg">No items in cart 😭😭😭. <span>Please support Huy&apos;s Valentine&apos;s Day Shop by buying some items!</span></div>}
         </div>
         <div id="total-summary">
           <p id="subtotal">Subtotal: <span>${subTotal}</span></p>
@@ -57,7 +58,7 @@ const CartBar = ({setCartToggle}) => {
           <p id="total">Total: <span>${total}</span></p>
         </div>
         <div id="button-bar">
-          <button id="secondary-button" className="form-button" onClick={checkout}>Checkout</button>
+          <button id="secondary-button" className="form-button" onClick={checkout} disabled={cartIsEmpty}>Checkout</button>
         </div>
       </div>
     </div>

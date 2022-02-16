@@ -5,8 +5,7 @@ const initialState = {
     imgSrc:'https://nationaltoday.com/wp-content/uploads/2021/08/Teddy-Bear-Day-640x514.jpg',
   },{name:'deleteMe', price:'100', quantity:1,
     imgSrc:'https://nationaltoday.com/wp-content/uploads/2021/08/Teddy-Bear-Day-640x514.jpg',
-  },],
-  subTotal: 50, 
+  },]
 };
 
 export const cartSlice = createSlice({

@@ -136,7 +136,7 @@ label {
   color: var(--text-dark);
 }
 
-#secondary-button:hover{
+#secondary-button:hover:not([disabled]){
   background-color: #4b5666;
   color: var(--text-light);
 }
