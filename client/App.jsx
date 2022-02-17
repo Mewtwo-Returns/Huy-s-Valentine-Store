@@ -50,7 +50,7 @@ const App = () => {
           <BiUserCircle className="icon" size={80} onClick={() => setSignInModalToggle(true)} style={{alignSelf: 'flex-end' , bottom: 8, position:'absolute' , right:125}}/>
           <AiOutlineShoppingCart className="icon" size={75} onClick={() => setCartToggle(true)}
             style={{alignSelf: 'flex-end' , position:'absolute' , bottom: 11, right:50 }}/> 
-            <p style={{textShadow: 'none', fontFamily: 'Cute Font', alignItem: 'center', alignSelf: 'flex-end', position:'absolute',  right:250, bottom: 20, fontSize: '5rem', letterSpacing:"1px"}}>Welcome, {firstName ? firstName : 'Guest'}</p>
+          <p style={{textShadow: 'none', fontFamily: 'Cute Font', alignItem: 'center', alignSelf: 'flex-end', position:'absolute',  right:250, bottom: 20, fontSize: '5rem', letterSpacing:'1px'}}>Welcome, {firstName ? firstName : 'Guest'}</p>
               
           <div className='header-links'>
             {/* <Link to='/cart'>
