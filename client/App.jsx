@@ -94,7 +94,7 @@ const App = () => {
             </Link>
             <Link to='/chocolate'>
               <button type='button' className="navbtn" onClick={() => <Link to='/chocolate'/>}><span className="bi bi-heart-fill"></span>
-                &nbsp;CHOCOLATE&nbsp;
+                &nbsp;SWEETS&nbsp;
                 <span className="bi bi-heart-fill"></span></button>
             </Link>
             <Link to='/card'>

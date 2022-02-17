@@ -28,7 +28,8 @@ const CartBar = ({setCartToggle}) => {
       subTotal += (item.price * item.quantity);
       return <CartItem item={item} key={idx} id={idx}/>;
     });
-  
+    
+    subTotal = Number(subTotal.toFixed(2));
     shipping = 15;
     calcTax = Number((subTotal * .0975).toFixed(2));
     total = Number(subTotal + shipping + calcTax).toFixed(2);
@@ -36,7 +37,7 @@ const CartBar = ({setCartToggle}) => {
   
 
   return (
-    <div id="modal-overlay" onClick={(e) => {e.stopPropagation();setCartToggle(false)}}>
+    <div id="modal-overlay">
       <div id="cart-sidebar">
         <IconContext.Provider value={{className: 'minimize-cart', size:'1.9em'}}>
           <BsBoxArrowRight onClick={() => setCartToggle(false)}/>
