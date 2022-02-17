@@ -1,0 +1,159 @@
+#modal-overlay {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-overlay);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: var(--modal-background);
+  color: var(--text-dark);
+  flex: 0 1 400px;
+  padding: 60px 40px;
+  z-index: 10;
+  font-family: 'Poppins', sans-serif;
+}
+
+#modal-close {
+  position: absolute;
+  right: 8px;
+  top: 4px;
+  cursor: pointer;
+}
+
+#login-section {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#sign-in-header{
+  flex: 1;
+}
+
+.sign-in{
+  text-align: center;
+  font: 2.2rem/1.3 'Poppins', sans-serif;
+  letter-spacing: 0.12rem;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-default);
+}
+
+#sign-in-blurb{
+  color: var(--text-medium);
+  font: 1.1rem "Poppins", sans-serif;
+  letter-spacing: 0.06rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  color: var(--text-dark);
+  font: 1.1rem 'Poppins',sans-serif;
+  letter-spacing: .06rem;
+  margin-bottom: 5px;
+}
+
+.form-input{
+  padding: 8px;
+  width: 100%;
+  height: 45px;
+  background-color: var(--site-background);
+  border: 1px solid var(--grey-medium);
+  color: var(--text-medium);
+  margin-bottom: 8px;
+  font: 1.3rem 'Poppins', san-serif
+}
+
+.form-input:focus {
+  outline-color: var(--input-border-focus);
+}
+
+#button-container{
+  width: 100%;
+}
+
+#button-container> button{
+  width: 100%;
+}
+
+.form-button {
+  min-height: 45px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid #4b5666;
+  background-color: #4b5666;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  letter-spacing: .24rem;
+}
+
+#signin-button:hover{
+  background-color: var(--site-background);
+  color: var(--text-dark);
+}
+
+#signup-section{
+  flex: 1 1;
+  width: 100%;
+}
+
+#secondary-sign-in{
+  border-bottom: none;
+  border-top: 1px solid var(--border-default);
+  margin-top: 20px;
+  padding-top: 10px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+
+#secondary-blurb{
+  color: var(--text-medium);
+  font: 1.1rem "Poppins", sans-serif;
+  letter-spacing: 0.06rem;
+  text-align: center;
+}
+
+#secondary-button{
+  background-color: var(--site-background);
+  color: var(--text-dark);
+}
+
+#secondary-button:hover:not([disabled]){
+  background-color: #4b5666;
+  color: var(--text-light);
+}
+
+.exit-modal{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.exit-modal:hover{
+  color: #c94646;
+  cursor: pointer;
+}
+
+#modal-logo-wrapper{
+  margin-top: 20px;
+  height: 50px;
+  width: 50px;
+}

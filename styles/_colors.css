@@ -1,0 +1,107 @@
+:root {
+  /* // AN named color variables calculated in RGB format
+  // Can then be used with rgb() or rbga() functions
+  // ex: --white: #{to-rgb(#fff)};
+  // --white = 255, 255, 255
+  // --site-background: rgbvar(--white);
+  // --site-background: rgbavar(--white), 0.8); */
+  
+  --white: #fff;
+  --ivory: #fdfdf9;
+  --taupe-light: #f7f6f2;
+  --taupe: #e5e2de;
+  --grey-light: #ccc;
+  --grey-medium: #939395;
+  --grey: #5c5c5f;
+  --grey-dark: #26262c;
+  --blue: #167a92;
+  --blue-grey: #4b566677;
+  --blue-light: #f2f8f5;
+  --red: #c33d3d;
+  --orange: #a5642d;
+  --yellow: #eabb30;
+  --green: #367668;
+  
+   /* Site backgrounds */
+  --site-background: var(--ivory);
+  --site-background-secondary: var(--taupe-light);
+
+  /* // Modal colors */
+  --modal-overlay: var(--blue-grey);
+  --modal-background: var(--ivory);
+  
+  
+  /* // Text colors */
+  --text-light: var(--white);
+  --text-medium: var(--grey);
+  --text-dark: var(--grey-dark);
+  --error: var(--red);
+  
+  /* // Link colors */
+  --link-text: var(--blue);
+  --link-text-hover: var(--blue);
+  --link-text-selected: var(--blue);
+  --link-navigation-border: var(--grey-dark);
+  --link-navigation-border-hover: var(--blue);
+  --link-navigation-border-selected: var(--grey-dark);
+  --link-navigation-text: var(--grey-dark);
+  --link-navigation-text-hover: var(--blue);
+  --link-navigation-text-selected: var(--grey-dark);
+  
+  /* // Button colors
+  // Button cart */
+  --button-cart-background: var(--blue-grey);
+  --button-cart-border: var(--blue-grey);
+  --button-cart-text: var(--white);
+  --button-cart-background-hover: var(--site-background);
+  --button-cart-border-hover: var(--blue-grey);
+  --button-cart-text-hover: var(--blue-grey);
+  --button-cart-background-disabled: var(--grey-light);
+  --button-cart-border-disabled: var(--grey-light);
+  --button-cart-text-disabled: var(--white);
+  --button-cart-background-confirmation: var(--site-background);
+  --button-cart-border-confirmation: var(--blue-grey);
+  --button-cart-text-confirmation: var(--blue-grey);
+  --button-cart-loader-confirmation: var(--blue-grey);
+  
+  /* // Button primary */
+  --button-primary-background: var(--blue-grey);
+  --button-primary-border: var(--blue-grey);
+  --button-primary-text: var(--white);
+  --button-primary-background-hover: var(--site-background);
+  --button-primary-border-hover: var(--blue-grey);
+  --button-primary-text-hover: var(--blue-grey);
+  --button-primary-background-disabled: var(--grey-light);
+  --button-primary-border-disabled: var(--grey-light);
+  --button-primary-text-disabled: var(--white);
+  --button-primary-background-confirmation: var(--site-background);
+  --button-primary-border-confirmation: var(--blue-grey);
+  
+  /* // Form colors */
+  --input-border: var(--grey-medium);
+  --input-background: var(--ivory);
+  --input-text-placeholder: var(--grey-medium);
+  --input-text: var(--grey);
+  --input-border-focus: var(--blue);
+  --input-border-disabled: var(--disabled);
+  --input-text-disabled: var(--disabled);
+  
+  /* // Icon colors */
+  --control: var(--grey-dark);
+  --control-hover: var(--blue);
+  --control-selected: var(--grey-dark);
+  --control-disabled: var(--grey-light);
+  --control-contrast: var(--white);
+  --control-hover-contrast: var(--taupe);
+  --icon: var(--grey-medium);
+
+  /* // Border colors */
+  --border-default: var(--taupe);
+  --separator: var(--grey-light);
+  --border-secondary: var(--taupe);
+  --border-heading: var(--taupe);
+  
+  /* // Box Shadow */
+  --box-shadow: transparent; 
+  --drop-shadow: rgba(0, 0, 0, 0.1);
+}

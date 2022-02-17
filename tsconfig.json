@@ -5,8 +5,9 @@
     "allowSyntheticDefaultImports": true,
     "module": "es6",
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node"
   },
+  "include": ["*", "client/index.d.ts"]
 }
