@@ -1,0 +1,174 @@
+#cart-sidebar{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px 20px;
+  /* background-color: #c94646; */
+  background-color: var(--site-background);
+  height: 100%;
+  /* min-width: 500px; */
+  width: 30%;
+  max-width: 500px;
+  z-index: 1001;
+  transition: all 2s ease;
+}
+
+.minimize-cart{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.minimize-cart:hover{
+  color: #c94646;
+  cursor: pointer;
+}
+
+#cart-header {
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font: 1.5rem/1.2 'Poppins', sans-serif;
+  color: var(--text-dark);
+}
+
+#cart-items-container {
+  margin: 30px 0;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 40px;
+}
+
+#emptyMsg {
+  display: flex;
+  flex-direction: column;
+  font: 1.4rem/1.2 'Poppins', sans-serif;
+}
+
+#item {
+  display: flex;
+  max-height: 50px;
+  gap: 20px;
+  align-items: center;
+}
+
+#cart-item-img {
+  width: 48px;
+  height: 48px;
+}
+
+#item-info {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#item-name {
+  flex: 1;
+  font: 1.4rem/1.2 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+#item-price {
+  font: 1rem/1.2 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+#quantity-selector {
+  flex: 0.9;
+}
+
+#quantity-selector > input{
+  padding: 5px;
+  height: 100%;
+  width: 50px;
+  font: 1rem/1.2 'Poppins', sans-serif;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+#quantity-selector > input:focus{
+  outline: 2px solid var(--input-border-focus);
+  border: none;
+}
+
+.trash-icon{
+  justify-self: flex-end;
+}
+
+#total-summary {
+  flex: 0 0 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font: 1.4rem/1.2 'Poppins', sans-serif;
+  padding: 20px 20px;
+  justify-content: flex-end;
+}
+
+#total-summary > p {
+  display: flex;
+  justify-content: space-between;
+}
+
+#total {
+  font-weight: bold;
+}
+
+#button-bar > button{
+  width: 100%;
+  font: 1.6rem/1.2 'Poppins', sans-serif
+}
+
+#button-bar > button:disabled{
+  cursor:default;
+  width: 100%;
+  background-color: black;
+  color: var(--text-medium);
+  font: 1.6rem/1.2 'Poppins', sans-serif
+}
+
+/* .expanded-transition-enter,
+.expanded-transition-appear{
+  top: 0;
+  right: -400px;
+  height: 100%;
+  color: transparent;
+  background-color: transparent;
+  transition: all 2000ms;
+}
+
+.expanded-transition-enter-active,
+.expanded-transition-appear-active {
+  top: 0;
+  right: 400px;
+  background-color: #c94646;
+  color: white;
+  transition: all 2000ms;
+}
+
+.expanded-transition-exit {
+  top: 0;
+  right: 0;
+  background-color: #c94646;
+  color: white;
+  transition: all 400ms;
+}
+
+.expanded-transition-exit-active {
+  top: 0;
+  right: -400px;
+  height: 100%;
+  color: transparent;
+  background-color: transparent;
+  transition: all 400ms;
+} */

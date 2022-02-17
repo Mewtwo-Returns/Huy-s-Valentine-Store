@@ -6,7 +6,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  entry: ['./client/index.js'],
+  entry: ['babel-polyfill', './client/index.js'],
   output: {
     path: path.resolve(__dirname, 'client/build'),
     filename: 'bundle.js',
@@ -31,15 +31,13 @@ const config = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              mimetype: 'image/png',
-            },
-          },
-        ],
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'clients/components/public/[name].[ext]'
+          }
+        },
       },
       {
         test: /\.svg$/,
@@ -47,6 +45,7 @@ const config = {
       },
     ],
   },
+  mode: 'development',
   devtool: 'eval-source-map',
   devServer: {
     historyApiFallback: true,
@@ -56,19 +55,18 @@ const config = {
       directory: './client/build',
     },
     proxy: {
-      '/api': {
+      '/api/**': {
         target: 'http://localhost:3000/',
-        pathRewrite: { '^/api': '' },
         secure: false,
       },
     },
+    host: 'localhost',
     port: 8080,
   },
   plugins: [
     new HtmlWebpackPlugin({
       templateContent: ({ htmlWebpackPlugin }) =>
-        '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' +
-        htmlWebpackPlugin.options.title +
+        '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Valentine' +
         '</title></head><body><div id="root"></div></body></html>',
       filename: 'index.html',
     }),

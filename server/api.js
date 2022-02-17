@@ -17,14 +17,14 @@ router.post(
   controller.hash,
   controller.newUser,
   (req, res) => res.status(200).json(res.locals.newUser)
-)
+);
 
 //get all user info from public.users, passing email & decrypted password in req.body
 router.post(
   '/login',
   controller.login,
   (req, res) => res.status(200).json(res.locals.user)
-)
+);
 
 //gets specific product by category
 router.get(
@@ -39,7 +39,6 @@ router.get(
   controller.getProducts,
   (req, res) => res.status(200).json(res.locals.productsInfo)
 );
-
 
 module.exports = router;
 

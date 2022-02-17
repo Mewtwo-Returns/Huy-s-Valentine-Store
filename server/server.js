@@ -1,24 +1,32 @@
 const express = require('express');
 const path = require('path');
 const pool = require('./database');
+const cors = require('cors');
 
 const app = express();
 
 const PORT = 3000;
 const apiRouter = require('./api');
 
+const corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
 /**
  * handle parsing request body
  */
- app.use(express.json());
- app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
  
+ app.use(cors(corsOptions));
+
 /**
  * handle requests for static files
  */
- app.use(express.static('./client'));
+app.use(express.static('./client'));
 
- const HTML_FILE = path.join(__dirname, '../client/index.html');
+const HTML_FILE = path.join(__dirname, '../client/index.html');
 
 // route handler to respond with main app
 app.get('/', (req, res) => {
@@ -33,7 +41,7 @@ app.get('/', (req, res) => {
 });
 
 
- /**
+/**
  * define route handlers
  */
 app.use('/api', apiRouter);
@@ -43,21 +51,21 @@ app.use((req, res) => res.status(404).send('This is not the page you\'re looking
 
 //global error handler 
 app.use((err, req, res, next) => {
-    const defaultErr = {
-      log: 'Express error handler caught unknown middleware error',
-      status: 500,
-      message: { err: 'An error occurred' },
-    };
-    const errorObj = Object.assign({}, defaultErr, err);
-    console.log(errorObj.log);
-    return res.status(errorObj.status).json(errorObj.message);
-  });
+  const defaultErr = {
+    log: 'Express error handler caught unknown middleware error',
+    status: 500,
+    message: { err: 'An error occurred' },
+  };
+  const errorObj = Object.assign({}, defaultErr, err);
+  console.log(errorObj.log);
+  return res.status(errorObj.status).json(errorObj.message);
+});
   
-  /**
+/**
    * start server
    */
-  app.listen(PORT, () => {
-    console.log(`Server listening on port: ${PORT}...`);
-  });
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}...`);
+});
   
-  module.exports = app;
+module.exports = app;
